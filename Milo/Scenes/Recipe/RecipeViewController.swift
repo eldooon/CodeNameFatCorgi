@@ -78,8 +78,8 @@ class RecipeViewController: UITableViewController, RecipeDisplayLogic
   
   func doSomething()
   {
-    let request = Recipe.Something.Request()
-    interactor?.doSomething(request: request)
+//    let request = Recipe.Something.Request()
+//    interactor?.doSomething(request: request)
   }
   
   func displaySomething(viewModel: Recipe.Something.ViewModel)

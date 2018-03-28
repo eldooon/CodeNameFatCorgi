@@ -14,7 +14,7 @@ import UIKit
 
 protocol RecipeBusinessLogic
 {
-  func doSomething(request: Recipe.Something.Request)
+//  func doSomething(request: Recipe.Something.Request)
 }
 
 protocol RecipeDataStore
@@ -30,12 +30,12 @@ class RecipeInteractor: RecipeBusinessLogic, RecipeDataStore
   
   // MARK: Do something
   
-  func doSomething(request: Recipe.Something.Request)
-  {
-    worker = RecipeWorker()
-    worker?.doSomeWork()
-    
-    let response = Recipe.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+//  func doSomething(request: Recipe.Something.Request)
+//  {
+//    worker = RecipeWorker()
+//    worker?.doSomeWork()
+//
+//    let response = Recipe.Something.Response()
+//    presenter?.presentSomething(response: response)
+//  }
 }

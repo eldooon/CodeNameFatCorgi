@@ -14,7 +14,7 @@ import UIKit
 
 protocol RecipePresentationLogic
 {
-  func presentSomething(response: Recipe.Something.Response)
+//  func presentSomething(response: Recipe.Something.Response)
 }
 
 class RecipePresenter: RecipePresentationLogic
@@ -23,9 +23,9 @@ class RecipePresenter: RecipePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: Recipe.Something.Response)
-  {
-    let viewModel = Recipe.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+//  func presentSomething(response: Recipe.Something.Response)
+//  {
+//    let viewModel = Recipe.Something.ViewModel()
+//    viewController?.displaySomething(viewModel: viewModel)
+//  }
 }
