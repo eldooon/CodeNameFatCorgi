@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */; };
-		BEB94297206BFA2700F1FEE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94296206BFA2700F1FEE1 /* ViewController.swift */; };
 		BEB9429A206BFA2700F1FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB94298206BFA2700F1FEE1 /* Main.storyboard */; };
 		BEB9429C206BFA2700F1FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */; };
 		BEB9429F206BFA2700F1FEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429D206BFA2700F1FEE1 /* LaunchScreen.storyboard */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		BEB94291206BFA2700F1FEE1 /* Milo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEB94296206BFA2700F1FEE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEB94299206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEB9429E206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 			children = (
 				BEB942A8206BFC3C00F1FEE1 /* Scenes */,
 				BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */,
-				BEB94296206BFA2700F1FEE1 /* ViewController.swift */,
 				BEB94298206BFA2700F1FEE1 /* Main.storyboard */,
 				BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */,
 				BEB9429D206BFA2700F1FEE1 /* LaunchScreen.storyboard */,
@@ -170,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEB94297206BFA2700F1FEE1 /* ViewController.swift in Sources */,
 				BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */,
 				BEB942B4206BFCCD00F1FEE1 /* RecipeViewController.swift in Sources */,
 				BEB942B0206BFCCD00F1FEE1 /* RecipePresenter.swift in Sources */,
