@@ -69,14 +69,14 @@ class RecipeViewController: UITableViewController, RecipeDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    doSomething()
+    fetchRecipes()
   }
   
   // MARK: Do something
   
   //@IBOutlet weak var nameTextField: UITextField!
   
-  func doSomething()
+  func fetchRecipes()
   {
 //    let request = Recipe.Something.Request()
 //    interactor?.doSomething(request: request)
