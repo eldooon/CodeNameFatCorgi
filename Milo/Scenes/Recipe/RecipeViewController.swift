@@ -17,7 +17,7 @@ protocol RecipeDisplayLogic: class
   func displaySomething(viewModel: Recipe.Something.ViewModel)
 }
 
-class RecipeViewController: UIViewController, RecipeDisplayLogic
+class RecipeViewController: UITableViewController, RecipeDisplayLogic
 {
   var interactor: RecipeBusinessLogic?
   var router: (NSObjectProtocol & RecipeRoutingLogic & RecipeDataPassing)?
