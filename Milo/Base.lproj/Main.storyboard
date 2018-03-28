@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jro-NV-uuj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipe View Controller-->
+        <!--Recipes-->
         <scene sceneID="8Do-Ln-Ml8">
             <objects>
                 <tableViewController id="0IK-8F-5vP" customClass="RecipeViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="0IK-8F-5vP" id="I3L-Sf-fFb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cdQ-H9-KkU"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="cdQ-H9-KkU"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMg-Z1-MxB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,7 +55,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I2p-WT-aKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-255" y="98"/>
+            <point key="canvasLocation" x="-130" y="98"/>
         </scene>
     </scenes>
 </document>
