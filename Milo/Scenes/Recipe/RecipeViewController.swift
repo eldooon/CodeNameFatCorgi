@@ -14,10 +14,10 @@ import UIKit
 
 protocol RecipeDisplayLogic: class
 {
-  func displaySomething(viewModel: Recipe.Something.ViewModel)
+  func displaySomething(viewModel: Recipe.FetchRecipes.ViewModel.DisplayedRecipes)
 }
 
-class RecipeViewController: UITableViewController, RecipeDisplayLogic
+class RecipeViewController: UICollectionViewController, RecipeDisplayLogic
 {
   var interactor: RecipeBusinessLogic?
   var router: (NSObjectProtocol & RecipeRoutingLogic & RecipeDataPassing)?
@@ -82,7 +82,7 @@ class RecipeViewController: UITableViewController, RecipeDisplayLogic
 //    interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Recipe.Something.ViewModel)
+  func displaySomething(viewModel: Recipe.FetchRecipes.ViewModel.DisplayedRecipes)
   {
     //nameTextField.text = viewModel.name
   }

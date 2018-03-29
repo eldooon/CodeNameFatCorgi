@@ -14,18 +14,19 @@ import UIKit
 
 enum Recipe
 {
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+    // MARK: Use cases
+    
+    enum FetchRecipes {
+        struct Request {
+        }
+        struct Response {
+        }
+        struct ViewModel {
+            struct DisplayedRecipes {
+                var id: String
+                var name: String
+                var description: String
+            }
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }
