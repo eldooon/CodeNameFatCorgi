@@ -79,5 +79,15 @@ class ListRecipeViewController: UICollectionViewController, ListRecipeDisplayLog
         //nameTextField.text = viewModel.name
     }
     
+    //Collectionview Setup
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return TestRecipe.testRecipeData.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        cell.backgroundColor = .blue
+        return cell
+    }
     
 }
