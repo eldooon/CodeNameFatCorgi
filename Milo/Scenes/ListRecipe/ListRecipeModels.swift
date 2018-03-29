@@ -20,6 +20,7 @@ enum ListRecipe
         struct Request {
         }
         struct Response {
+            var recipes: [Recipe]
         }
         struct ViewModel {
             struct DisplayedRecipes {
