@@ -24,10 +24,10 @@ enum ListRecipe
         }
         struct ViewModel {
             struct DisplayedRecipes {
-                var id: String
                 var name: String
                 var description: String
             }
+            var displayedRecipes: [DisplayedRecipes]
         }
     }
 }

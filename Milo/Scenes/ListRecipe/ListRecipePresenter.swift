@@ -12,20 +12,23 @@
 
 import UIKit
 
-protocol ListRecipePresentationLogic
-{
-//  func presentSomething(response: Recipe.Something.Response)
+protocol ListRecipePresentationLogic {
+    func presentFetchedRecipes(response: ListRecipe.FetchRecipes.Response)
 }
 
-class ListRecipePresenter: ListRecipePresentationLogic
-{
-  weak var viewController: ListRecipeDisplayLogic?
-  
-  // MARK: Do something
-  
-//  func presentSomething(response: Recipe.Something.Response)
-//  {
-//    let viewModel = Recipe.Something.ViewModel()
-//    viewController?.displaySomething(viewModel: viewModel)
-//  }
+class ListRecipePresenter: ListRecipePresentationLogic {
+
+    weak var viewController: ListRecipeDisplayLogic?
+    
+    // MARK: Do something
+    func presentFetchedRecipes(response: ListRecipe.FetchRecipes.Response) {
+        
+        var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
+        for recipe in response.recipes {
+            
+            let displayedRecipe = ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes(name: recipe.name, description: recipe.description)
+            displayedRecipes.append(displayedRecipe)
+        }
+        let viewModel = ListRecipe.FetchRecipes.ViewModel(displayedRecipes: displayedRecipes)
+    }
 }
