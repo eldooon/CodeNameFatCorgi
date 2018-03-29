@@ -16,7 +16,7 @@ protocol ListRecipeDisplayLogic: class{
     func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes)
 }
 
-class ListRecipeViewController: UICollectionViewController, ListRecipeDisplayLogic {
+class ListRecipeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ListRecipeDisplayLogic {
     var interactor: ListRecipeBusinessLogic?
     var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
     
@@ -88,6 +88,11 @@ class ListRecipeViewController: UICollectionViewController, ListRecipeDisplayLog
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
         cell.backgroundColor = .blue
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: (view.frame.width/2)-1, height: 200)
     }
     
 }
