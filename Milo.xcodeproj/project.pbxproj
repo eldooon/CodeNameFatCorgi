@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466943206C7E73000AC6C3 /* Recipe.swift */; };
 		BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466946206D4040000AC6C3 /* TestRecipes.swift */; };
+		BE46694A206D9605000AC6C3 /* RecipesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466949206D9605000AC6C3 /* RecipesWorker.swift */; };
 		BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */; };
 		BEB9429A206BFA2700F1FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB94298206BFA2700F1FEE1 /* Main.storyboard */; };
 		BEB9429C206BFA2700F1FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		BE466943206C7E73000AC6C3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BE466946206D4040000AC6C3 /* TestRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipes.swift; sourceTree = "<group>"; };
+		BE466949206D9605000AC6C3 /* RecipesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesWorker.swift; sourceTree = "<group>"; };
 		BEB94291206BFA2700F1FEE1 /* Milo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB94299206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			path = Testing;
 			sourceTree = "<group>";
 		};
+		BE466948206D95CD000AC6C3 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				BE466949206D9605000AC6C3 /* RecipesWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		BEB94288206BFA2700F1FEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 		BEB94293206BFA2700F1FEE1 /* Milo */ = {
 			isa = PBXGroup;
 			children = (
+				BE466948206D95CD000AC6C3 /* Worker */,
 				BE466945206D402B000AC6C3 /* Testing */,
 				BE466942206C7E5A000AC6C3 /* Model */,
 				BEB942A8206BFC3C00F1FEE1 /* Scenes */,
@@ -190,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */,
+				BE46694A206D9605000AC6C3 /* RecipesWorker.swift in Sources */,
 				BEB942B4206BFCCD00F1FEE1 /* ListRecipeViewController.swift in Sources */,
 				BEB942B0206BFCCD00F1FEE1 /* ListRecipePresenter.swift in Sources */,
 				BEB942B5206BFCCD00F1FEE1 /* ListRecipeInteractor.swift in Sources */,

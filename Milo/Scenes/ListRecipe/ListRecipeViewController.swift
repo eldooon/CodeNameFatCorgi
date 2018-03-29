@@ -13,12 +13,13 @@
 import UIKit
 
 protocol ListRecipeDisplayLogic: class{
-    func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes)
+    func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel)
 }
 
 class ListRecipeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ListRecipeDisplayLogic {
     var interactor: ListRecipeBusinessLogic?
     var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
+    var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
     
     // MARK: Object lifecycle
     
@@ -75,13 +76,14 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
         //    interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes) {
-        //nameTextField.text = viewModel.name
+    func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel) {
+        displayedRecipes = viewModel.displayedRecipes
+        collectionView?.reloadData()
     }
     
     //Collectionview Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TestRecipe.testRecipeData.count
+        return displayedRecipes.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
