@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+struct Recipe {
+    
+    //Recipe Info
+    var name: String
+    var description: String
+}
