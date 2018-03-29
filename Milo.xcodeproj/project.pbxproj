@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466943206C7E73000AC6C3 /* Recipe.swift */; };
+		BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466946206D4040000AC6C3 /* TestRecipes.swift */; };
 		BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */; };
 		BEB9429A206BFA2700F1FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB94298206BFA2700F1FEE1 /* Main.storyboard */; };
 		BEB9429C206BFA2700F1FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		BE466943206C7E73000AC6C3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		BE466946206D4040000AC6C3 /* TestRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipes.swift; sourceTree = "<group>"; };
 		BEB94291206BFA2700F1FEE1 /* Milo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB94299206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BE466945206D402B000AC6C3 /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				BE466946206D4040000AC6C3 /* TestRecipes.swift */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
 		BEB94288206BFA2700F1FEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +84,7 @@
 		BEB94293206BFA2700F1FEE1 /* Milo */ = {
 			isa = PBXGroup;
 			children = (
+				BE466945206D402B000AC6C3 /* Testing */,
 				BE466942206C7E5A000AC6C3 /* Model */,
 				BEB942A8206BFC3C00F1FEE1 /* Scenes */,
 				BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */,
@@ -185,6 +196,7 @@
 				BEB942B1206BFCCD00F1FEE1 /* ListRecipeWorker.swift in Sources */,
 				BEB942B2206BFCCD00F1FEE1 /* ListRecipeRouter.swift in Sources */,
 				BEB942B3206BFCCD00F1FEE1 /* ListRecipeModels.swift in Sources */,
+				BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */,
 				BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
