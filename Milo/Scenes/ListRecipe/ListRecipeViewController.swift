@@ -86,7 +86,6 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = .blue
         return cell
     }
     

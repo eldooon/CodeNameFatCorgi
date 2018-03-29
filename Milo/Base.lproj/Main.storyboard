@@ -31,23 +31,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e8s-1l-S7p">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <color key="backgroundColor" red="0.15039451329912756" green="0.21972821414602539" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvW-eC-aGj">
                                             <rect key="frame" x="5" y="48" width="90" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="F4z-9W-maw"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="yMM-zp-ve3"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="e8s-1l-S7p" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" id="HLN-bc-FY5"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" constant="5" id="X5Z-ks-7A1"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="centerX" secondItem="SrP-Mv-PJy" secondAttribute="centerX" id="X7M-r9-6jm"/>
                                     <constraint firstAttribute="bottom" secondItem="PvW-eC-aGj" secondAttribute="bottom" constant="2" id="ija-hS-VlB"/>
                                     <constraint firstAttribute="trailing" secondItem="PvW-eC-aGj" secondAttribute="trailing" constant="5" id="kGM-Ge-GRI"/>
+                                    <constraint firstItem="e8s-1l-S7p" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="nHO-xv-EkM"/>
+                                    <constraint firstAttribute="bottom" secondItem="e8s-1l-S7p" secondAttribute="bottom" id="s7g-CC-bCg"/>
+                                    <constraint firstAttribute="trailing" secondItem="e8s-1l-S7p" secondAttribute="trailing" id="vkV-iV-HAE"/>
                                 </constraints>
                             </collectionViewCell>
                         </cells>
