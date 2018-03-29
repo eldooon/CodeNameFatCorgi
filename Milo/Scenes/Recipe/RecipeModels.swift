@@ -12,7 +12,7 @@
 
 import UIKit
 
-enum Recipe
+enum ListRecipe
 {
     // MARK: Use cases
     

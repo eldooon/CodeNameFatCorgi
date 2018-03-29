@@ -12,20 +12,20 @@
 
 import UIKit
 
-protocol RecipeBusinessLogic
+protocol ListRecipeBusinessLogic
 {
 //  func doSomething(request: Recipe.Something.Request)
 }
 
-protocol RecipeDataStore
+protocol ListRecipeDataStore
 {
   //var name: String { get set }
 }
 
-class RecipeInteractor: RecipeBusinessLogic, RecipeDataStore
+class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore
 {
-  var presenter: RecipePresentationLogic?
-  var worker: RecipeWorker?
+  var presenter: ListRecipePresentationLogic?
+  var worker: ListRecipeWorker?
   //var name: String = ""
   
   // MARK: Do something

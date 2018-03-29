@@ -12,14 +12,14 @@
 
 import UIKit
 
-protocol RecipePresentationLogic
+protocol ListRecipePresentationLogic
 {
 //  func presentSomething(response: Recipe.Something.Response)
 }
 
-class RecipePresenter: RecipePresentationLogic
+class ListRecipePresenter: ListRecipePresentationLogic
 {
-  weak var viewController: RecipeDisplayLogic?
+  weak var viewController: ListRecipeDisplayLogic?
   
   // MARK: Do something
   

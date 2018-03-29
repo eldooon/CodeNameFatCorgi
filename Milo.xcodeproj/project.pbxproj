@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466943206C7E73000AC6C3 /* Recipe.swift */; };
 		BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */; };
 		BEB9429A206BFA2700F1FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB94298206BFA2700F1FEE1 /* Main.storyboard */; };
 		BEB9429C206BFA2700F1FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE466943206C7E73000AC6C3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BEB94291206BFA2700F1FEE1 /* Milo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB94299206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE466942206C7E5A000AC6C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE466943206C7E73000AC6C3 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BEB94288206BFA2700F1FEE1 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		BEB94293206BFA2700F1FEE1 /* Milo */ = {
 			isa = PBXGroup;
 			children = (
+				BE466942206C7E5A000AC6C3 /* Model */,
 				BEB942A8206BFC3C00F1FEE1 /* Scenes */,
 				BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */,
 				BEB94298206BFA2700F1FEE1 /* Main.storyboard */,
@@ -174,6 +185,7 @@
 				BEB942B1206BFCCD00F1FEE1 /* RecipeWorker.swift in Sources */,
 				BEB942B2206BFCCD00F1FEE1 /* RecipeRouter.swift in Sources */,
 				BEB942B3206BFCCD00F1FEE1 /* RecipeModels.swift in Sources */,
+				BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

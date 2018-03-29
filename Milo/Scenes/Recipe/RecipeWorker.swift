@@ -12,7 +12,7 @@
 
 import UIKit
 
-class RecipeWorker
+class ListRecipeWorker
 {
 //  func doSomeWork()
 //  {

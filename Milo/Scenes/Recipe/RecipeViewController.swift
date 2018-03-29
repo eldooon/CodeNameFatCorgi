@@ -12,15 +12,15 @@
 
 import UIKit
 
-protocol RecipeDisplayLogic: class
+protocol ListRecipeDisplayLogic: class
 {
-  func displaySomething(viewModel: Recipe.FetchRecipes.ViewModel.DisplayedRecipes)
+  func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes)
 }
 
-class RecipeViewController: UICollectionViewController, RecipeDisplayLogic
+class ListRecipeViewController: UICollectionViewController, ListRecipeDisplayLogic
 {
-  var interactor: RecipeBusinessLogic?
-  var router: (NSObjectProtocol & RecipeRoutingLogic & RecipeDataPassing)?
+  var interactor: ListRecipeBusinessLogic?
+  var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
 
   // MARK: Object lifecycle
   
@@ -41,9 +41,9 @@ class RecipeViewController: UICollectionViewController, RecipeDisplayLogic
   private func setup()
   {
     let viewController = self
-    let interactor = RecipeInteractor()
-    let presenter = RecipePresenter()
-    let router = RecipeRouter()
+    let interactor = ListRecipeInteractor()
+    let presenter = ListRecipePresenter()
+    let router = ListRecipeRouter()
     viewController.interactor = interactor
     viewController.router = router
     interactor.presenter = presenter
@@ -82,7 +82,7 @@ class RecipeViewController: UICollectionViewController, RecipeDisplayLogic
 //    interactor?.doSomething(request: request)
   }
   
-  func displaySomething(viewModel: Recipe.FetchRecipes.ViewModel.DisplayedRecipes)
+  func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes)
   {
     //nameTextField.text = viewModel.name
   }

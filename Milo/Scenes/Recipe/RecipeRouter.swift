@@ -12,20 +12,20 @@
 
 import UIKit
 
-@objc protocol RecipeRoutingLogic
+@objc protocol ListRecipeRoutingLogic
 {
   //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
-protocol RecipeDataPassing
+protocol ListRecipeDataPassing
 {
-  var dataStore: RecipeDataStore? { get }
+  var dataStore: ListRecipeDataStore? { get }
 }
 
-class RecipeRouter: NSObject, RecipeRoutingLogic, RecipeDataPassing
+class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing
 {
-  weak var viewController: RecipeViewController?
-  var dataStore: RecipeDataStore?
+  weak var viewController: ListRecipeViewController?
+  var dataStore: ListRecipeDataStore?
   
   // MARK: Routing
   
