@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol ListRecipeDisplayLogic: class {
+protocol ListRecipeDisplayLogic: class{
     func displaySomething(viewModel: ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes)
 }
 

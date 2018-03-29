@@ -14,5 +14,5 @@ let chicken = Recipe(name: "Chicken", description: "Chicken w/ Rice")
 let beef = Recipe(name: "Beef", description: "Beef w/ Pasta")
 
 public class TestRecipe {
-    let testRecipeData = [turkey, chicken, beef]
+    static let testRecipeData = [turkey, chicken, beef]
 }
