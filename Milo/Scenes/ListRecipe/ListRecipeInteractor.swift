@@ -28,9 +28,13 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     
     // MARK: Do something
     func fetchRecipes(request: ListRecipe.FetchRecipes.Request) {
-        self.recipes = TestRecipe.testRecipeData
-//        let response = ListRecipe.FetchRecipes.Response(recipes: recipes)
-//
+        
+        if let recipes = recipes {
+            self.recipes = TestRecipe.testRecipeData
+            let response = ListRecipe.FetchRecipes.Response(recipes: recipes)
+        }
+        
+        //
     }
-
+    
 }
