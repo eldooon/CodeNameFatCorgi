@@ -12,30 +12,25 @@
 
 import UIKit
 
-protocol ListRecipeBusinessLogic
-{
-//  func doSomething(request: Recipe.Something.Request)
+protocol ListRecipeBusinessLogic {
+    func fetchRecipes(request: ListRecipe.FetchRecipes.Request)
 }
 
-protocol ListRecipeDataStore
-{
-  //var name: String { get set }
+protocol ListRecipeDataStore {
+    //var name: String { get set }
 }
 
-class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore
-{
-  var presenter: ListRecipePresentationLogic?
-  var worker: ListRecipeWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-//  func doSomething(request: Recipe.Something.Request)
-//  {
-//    worker = RecipeWorker()
-//    worker?.doSomeWork()
+class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
+    
+    var presenter: ListRecipePresentationLogic?
+    var worker: ListRecipeWorker?
+    var recipes: [Recipe]?
+    
+    // MARK: Do something
+    func fetchRecipes(request: ListRecipe.FetchRecipes.Request) {
+        self.recipes = TestRecipe.testRecipeData
+//        let response = ListRecipe.FetchRecipes.Response(recipes: recipes)
 //
-//    let response = Recipe.Something.Response()
-//    presenter?.presentSomething(response: response)
-//  }
+    }
+
 }
