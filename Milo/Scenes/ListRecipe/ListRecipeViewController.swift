@@ -91,7 +91,8 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: (view.frame.width/2)-1, height: 200)
+        let cellSize = (view.frame.width/2)-1
+        return CGSize(width: cellSize, height: cellSize)
     }
     
 }
