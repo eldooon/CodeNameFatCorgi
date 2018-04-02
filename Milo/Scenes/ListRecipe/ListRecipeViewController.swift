@@ -84,12 +84,11 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     //Collectionview Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("COUNT OF RECIPES", displayedRecipes.count)
         return displayedRecipes.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ListRecipeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ListRecipeCell
         cell.nameLabel.text = displayedRecipes[indexPath.item].name
         return cell
     }
