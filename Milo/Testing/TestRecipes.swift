@@ -13,6 +13,11 @@ let turkey = Recipe(name: "Turkey", description: "Turkey w/ Rice")
 let chicken = Recipe(name: "Chicken", description: "Chicken w/ Rice")
 let beef = Recipe(name: "Beef", description: "Beef w/ Pasta")
 
-public class TestRecipe {
+class TestRecipe: RecipesStoreProtocol {
+    
     static let testRecipeData = [turkey, chicken, beef]
+    
+    func fetchOrders(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
+        completionHandler(type(of: self).testRecipeData, nil)
+    }
 }

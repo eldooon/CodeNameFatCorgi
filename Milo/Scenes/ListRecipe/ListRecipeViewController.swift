@@ -72,8 +72,9 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     //@IBOutlet weak var nameTextField: UITextField!
     
     func fetchRecipes(){
-        //    let request = Recipe.Something.Request()
-        //    interactor?.doSomething(request: request)
+        
+        let request = ListRecipe.FetchRecipes.Request()
+        interactor?.fetchRecipes(request: request)
     }
     
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel) {
@@ -83,6 +84,7 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     //Collectionview Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print("COUNT OF RECIPES", displayedRecipes.count)
         return displayedRecipes.count
     }
     
