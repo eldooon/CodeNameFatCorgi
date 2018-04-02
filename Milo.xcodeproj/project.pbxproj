@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE313E47207291CA008B99E8 /* ListRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE313E46207291CA008B99E8 /* ListRecipeCell.swift */; };
 		BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466943206C7E73000AC6C3 /* Recipe.swift */; };
 		BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466946206D4040000AC6C3 /* TestRecipes.swift */; };
 		BE46694A206D9605000AC6C3 /* RecipesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466949206D9605000AC6C3 /* RecipesWorker.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE313E46207291CA008B99E8 /* ListRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeCell.swift; sourceTree = "<group>"; };
 		BE466943206C7E73000AC6C3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BE466946206D4040000AC6C3 /* TestRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipes.swift; sourceTree = "<group>"; };
 		BE466949206D9605000AC6C3 /* RecipesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesWorker.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE313E45207291B3008B99E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE313E46207291CA008B99E8 /* ListRecipeCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BE466942206C7E5A000AC6C3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		BEB942A9206BFC4000F1FEE1 /* ListRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				BE313E45207291B3008B99E8 /* Views */,
 				BEB942AA206BFCCD00F1FEE1 /* ListRecipePresenter.swift */,
 				BEB942AB206BFCCD00F1FEE1 /* ListRecipeWorker.swift */,
 				BEB942AC206BFCCD00F1FEE1 /* ListRecipeRouter.swift */,
@@ -210,6 +221,7 @@
 				BEB942B3206BFCCD00F1FEE1 /* ListRecipeModels.swift in Sources */,
 				BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */,
 				BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */,
+				BE313E47207291CA008B99E8 /* ListRecipeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
