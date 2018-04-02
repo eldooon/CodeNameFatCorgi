@@ -27,6 +27,7 @@ class ListRecipePresenter: ListRecipePresentationLogic {
         for recipe in response.recipes {
             
             let displayedRecipe = ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes(name: recipe.name, description: recipe.description)
+            displayedRecipes.append(displayedRecipe)
         }
         
         let viewModel = ListRecipe.FetchRecipes.ViewModel(displayedRecipes: displayedRecipes)

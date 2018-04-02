@@ -89,7 +89,8 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
+        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ListRecipeCell
+        cell.nameLabel.text = displayedRecipes[indexPath.item].name
         return cell
     }
     
