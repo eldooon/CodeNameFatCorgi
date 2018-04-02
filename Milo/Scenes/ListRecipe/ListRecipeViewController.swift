@@ -69,7 +69,12 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     // MARK: Do something
     
-    //@IBOutlet weak var nameTextField: UITextField!
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        //
+    }
+
+    
+    // MARK: Fetch Recipes
     
     func fetchRecipes(){
         
@@ -98,5 +103,6 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
         let cellSize = (view.frame.width/2)-1
         return CGSize(width: cellSize, height: cellSize)
     }
+    
     
 }
