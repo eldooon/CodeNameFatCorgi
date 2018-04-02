@@ -62,6 +62,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="e8s-1l-S7p" id="iDh-kv-IaK"/>
                                     <outlet property="nameLabel" destination="PvW-eC-aGj" id="Hhk-2o-SLs"/>
+                                    <segue destination="FvH-IN-ufV" kind="show" id="Ykt-4O-c7A"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -76,16 +77,16 @@
             </objects>
             <point key="canvasLocation" x="1284" y="96.7016491754123"/>
         </scene>
-        <!--Show Recipe View Controller-->
+        <!--View Controller-->
         <scene sceneID="pmx-1X-p6g">
             <objects>
-                <viewController id="FvH-IN-ufV" customClass="ShowRecipeViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FvH-IN-ufV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXx-DZ-Vzm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHJ-gs-UcZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
