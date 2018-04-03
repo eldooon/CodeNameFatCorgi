@@ -62,7 +62,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="e8s-1l-S7p" id="iDh-kv-IaK"/>
                                     <outlet property="nameLabel" destination="PvW-eC-aGj" id="Hhk-2o-SLs"/>
-                                    <segue destination="FvH-IN-ufV" kind="show" id="Ykt-4O-c7A"/>
+                                    <segue destination="FvH-IN-ufV" kind="show" identifier="ShowRecipe" id="Ykt-4O-c7A"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1284" y="96.7016491754123"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Recipe View Controller-->
         <scene sceneID="pmx-1X-p6g">
             <objects>
-                <viewController id="FvH-IN-ufV" sceneMemberID="viewController">
+                <viewController id="FvH-IN-ufV" customClass="ShowRecipeViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXx-DZ-Vzm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,16 +88,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHJ-gs-UcZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="375"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-Iw-064">
+                                <rect key="frame" x="166" y="447" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kwW-Iw-064" firstAttribute="centerX" secondItem="q9C-s9-Gmz" secondAttribute="centerX" id="XbI-17-uUS"/>
                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="height" secondItem="OXx-DZ-Vzm" secondAttribute="width" id="Yna-N3-MyS"/>
                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="width" secondItem="OXx-DZ-Vzm" secondAttribute="width" id="ZPM-Z1-g5x"/>
+                            <constraint firstItem="kwW-Iw-064" firstAttribute="top" secondItem="XHJ-gs-UcZ" secondAttribute="bottom" id="fhi-Bp-OoI"/>
                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="top" secondItem="q9C-s9-Gmz" secondAttribute="top" id="mVL-rN-qDS"/>
                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="centerX" secondItem="q9C-s9-Gmz" secondAttribute="centerX" id="xgv-2z-GQt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q9C-s9-Gmz"/>
                     </view>
+                    <connections>
+                        <outlet property="recipeNameLabel" destination="kwW-Iw-064" id="LIt-dx-pUe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9T-Mj-SMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

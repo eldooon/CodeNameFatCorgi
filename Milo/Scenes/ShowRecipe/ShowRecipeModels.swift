@@ -12,20 +12,21 @@
 
 import UIKit
 
-enum ShowRecipe
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
+enum ShowRecipe {
+    // MARK: Use cases
+    
+    enum GetRecipe {
+        struct Request {
+        }
+        struct Response {
+            var recipe: Recipe
+        }
+        struct ViewModel {
+            struct DisplayedRecipe {
+                var name: String
+                var description: String
+            }
+            var displayedRecipe: DisplayedRecipe
+        }
     }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
 }

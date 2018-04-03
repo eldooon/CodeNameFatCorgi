@@ -53,6 +53,7 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let scene = segue.identifier {
+            print("ROUTING!")
             let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
             if let router = router, router.responds(to: selector) {
                 router.perform(selector, with: segue)
@@ -66,13 +67,6 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
         super.viewDidLoad()
         fetchRecipes()
     }
-    
-    // MARK: Do something
-    
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        //
-    }
-
     
     // MARK: Fetch Recipes
     

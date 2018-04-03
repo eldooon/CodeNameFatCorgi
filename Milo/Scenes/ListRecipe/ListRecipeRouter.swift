@@ -12,49 +12,44 @@
 
 import UIKit
 
-@objc protocol ListRecipeRoutingLogic
-{
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+@objc protocol ListRecipeRoutingLogic {
+    func routeToShowRecipe(segue: UIStoryboardSegue?)
 }
 
-protocol ListRecipeDataPassing
-{
-  var dataStore: ListRecipeDataStore? { get }
+protocol ListRecipeDataPassing {
+    var dataStore: ListRecipeDataStore? { get }
 }
 
-class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing
-{
-  weak var viewController: ListRecipeViewController?
-  var dataStore: ListRecipeDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: RecipeViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: RecipeDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing {
+    
+    
+    weak var viewController: ListRecipeViewController?
+    var dataStore: ListRecipeDataStore?
+    
+    // MARK: Routing
+    
+    func routeToShowRecipe(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! ShowRecipeViewController
+            var destinationDS = destinationVC.router?.dataStore
+            passDataToShowRecipe(source: dataStore!, destination: &destinationDS!)
+        }
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToShowRecipe(source: ListRecipeViewController, destination: ShowRecipeViewController) {
+      source.show(destination, sender: nil)
+    }
+    
+    // MARK: Passing data.
+    
+    func passDataToShowRecipe(source: ListRecipeDataStore, destination: inout ShowRecipeDataStore)
+    {
+        let selectedItemPath = viewController?.collectionView?.indexPathsForSelectedItems
+        let selectedItem = selectedItemPath?.first?.item
+        destination.recipe = source.recipes?[selectedItem!]
+        print("RECIPE ROUTING:",destination.recipe)
+        
+    }
 }

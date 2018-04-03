@@ -14,7 +14,7 @@ import UIKit
 
 protocol ShowRecipeDisplayLogic: class
 {
-  func displaySomething(viewModel: ShowRecipe.Something.ViewModel)
+  func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
 }
 
 class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
@@ -22,7 +22,8 @@ class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
   var interactor: ShowRecipeBusinessLogic?
   var router: (NSObjectProtocol & ShowRecipeRoutingLogic & ShowRecipeDataPassing)?
 
-  // MARK: Object lifecycle
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
   {
@@ -78,12 +79,14 @@ class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
   
   func doSomething()
   {
-    let request = ShowRecipe.Something.Request()
-    interactor?.doSomething(request: request)
+    let request = ShowRecipe.GetRecipe.Request()
+    interactor?.getRecipe(request: request)
   }
   
-  func displaySomething(viewModel: ShowRecipe.Something.ViewModel)
+  func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
   {
-    //nameTextField.text = viewModel.name
+    let displayedsRecipe = viewModel.displayedRecipe
+    recipeNameLabel.text = displayedsRecipe.name
+    
   }
 }

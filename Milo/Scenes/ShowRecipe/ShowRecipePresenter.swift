@@ -14,7 +14,7 @@ import UIKit
 
 protocol ShowRecipePresentationLogic
 {
-  func presentSomething(response: ShowRecipe.Something.Response)
+  func presentRecipe(response: ShowRecipe.GetRecipe.Response)
 }
 
 class ShowRecipePresenter: ShowRecipePresentationLogic
@@ -23,9 +23,11 @@ class ShowRecipePresenter: ShowRecipePresentationLogic
   
   // MARK: Do something
   
-  func presentSomething(response: ShowRecipe.Something.Response)
+  func presentRecipe(response: ShowRecipe.GetRecipe.Response)
   {
-    let viewModel = ShowRecipe.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+    let recipe = response.recipe
+    let displayedRecipe = ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe(name: recipe.name, description: recipe.description)
+    let viewModel = ShowRecipe.GetRecipe.ViewModel(displayedRecipe: displayedRecipe)
+    viewController?.displayRecipe(viewModel: viewModel)
   }
 }

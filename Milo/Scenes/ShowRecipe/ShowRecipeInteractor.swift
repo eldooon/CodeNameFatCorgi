@@ -12,30 +12,25 @@
 
 import UIKit
 
-protocol ShowRecipeBusinessLogic
-{
-  func doSomething(request: ShowRecipe.Something.Request)
+protocol ShowRecipeBusinessLogic {
+    func getRecipe(request: ShowRecipe.GetRecipe.Request)
 }
 
-protocol ShowRecipeDataStore
-{
-  //var name: String { get set }
+protocol ShowRecipeDataStore {
+    var recipe: Recipe! { get set }
 }
 
-class ShowRecipeInteractor: ShowRecipeBusinessLogic, ShowRecipeDataStore
-{
-  var presenter: ShowRecipePresentationLogic?
-  var worker: ShowRecipeWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ShowRecipe.Something.Request)
-  {
-    worker = ShowRecipeWorker()
-    worker?.doSomeWork()
+class ShowRecipeInteractor: ShowRecipeBusinessLogic, ShowRecipeDataStore {
     
-    let response = ShowRecipe.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var presenter: ShowRecipePresentationLogic?
+    var worker: ShowRecipeWorker?
+    var recipe: Recipe!
+    
+    // MARK: Do something
+    
+    func getRecipe(request: ShowRecipe.GetRecipe.Request) {
+        
+        let response = ShowRecipe.GetRecipe.Response(recipe: recipe)
+        presenter?.presentRecipe(response: response)
+    }
 }
