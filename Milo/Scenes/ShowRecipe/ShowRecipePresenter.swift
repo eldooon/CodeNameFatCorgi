@@ -26,7 +26,7 @@ class ShowRecipePresenter: ShowRecipePresentationLogic
   func presentRecipe(response: ShowRecipe.GetRecipe.Response)
   {
     let recipe = response.recipe
-    let displayedRecipe = ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe(name: recipe.name, description: recipe.description)
+    let displayedRecipe = ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe(image: recipe.image, name: recipe.name, description: recipe.description)
     let viewModel = ShowRecipe.GetRecipe.ViewModel(displayedRecipe: displayedRecipe)
     viewController?.displayRecipe(viewModel: viewModel)
   }

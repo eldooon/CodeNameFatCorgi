@@ -23,6 +23,7 @@ enum ShowRecipe {
         }
         struct ViewModel {
             struct DisplayedRecipe {
+                var image: UIImage
                 var name: String
                 var description: String
             }

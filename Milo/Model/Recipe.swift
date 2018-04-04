@@ -6,11 +6,13 @@
 //  Copyright © 2018 ByEldon. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Recipe {
     
     //Recipe Info
+    
+    var image: UIImage
     var name: String
     var description: String
 }

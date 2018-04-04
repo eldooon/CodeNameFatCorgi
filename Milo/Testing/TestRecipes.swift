@@ -9,9 +9,9 @@
 import UIKit
 
 
-let turkey = Recipe(name: "Turkey", description: "Turkey w/ Rice")
-let chicken = Recipe(name: "Chicken", description: "Chicken w/ Rice")
-let beef = Recipe(name: "Beef", description: "Beef w/ Pasta")
+let turkey = Recipe(image: #imageLiteral(resourceName: "turkey"), name: "Turkey", description: "Turkey w/ Rice")
+let chicken = Recipe(image: #imageLiteral(resourceName: "chicken"), name: "Chicken", description: "Chicken w/ Rice")
+let beef = Recipe(image: #imageLiteral(resourceName: "beef"), name: "Beef", description: "Beef w/ Pasta")
 
 class TestRecipe: RecipesStoreProtocol {
     

@@ -90,6 +90,7 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! ListRecipeCell
         cell.nameLabel.text = displayedRecipes[indexPath.item].name
+        cell.imageView.image = displayedRecipes[indexPath.item].image
         return cell
     }
     
