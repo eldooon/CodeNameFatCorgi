@@ -22,7 +22,7 @@ class ListRecipePresenter: ListRecipePresentationLogic {
     
     // MARK: Do something
     func presentFetchedRecipes(response: ListRecipe.FetchRecipes.Response) {
-        
+        print("4. Sending viewmodel to VC")
         var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
         for recipe in response.recipes {
             

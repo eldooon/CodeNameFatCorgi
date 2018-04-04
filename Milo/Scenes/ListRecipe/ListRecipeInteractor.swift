@@ -28,8 +28,9 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     
     // MARK: Do something
     func fetchRecipes(request: ListRecipe.FetchRecipes.Request) {
-        
+        print("2. Fetch Recipe")
         recipeWorker.fetchRecipes { (recipes, error) in
+            print("3. send response")
             self.recipes = recipes
             let response = ListRecipe.FetchRecipes.Response(recipes: recipes)
             self.presenter?.presentFetchedRecipes(response: response)

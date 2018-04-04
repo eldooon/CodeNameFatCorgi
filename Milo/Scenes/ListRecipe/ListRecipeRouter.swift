@@ -29,6 +29,7 @@ class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing 
     // MARK: Routing
     
     func routeToShowRecipe(segue: UIStoryboardSegue?) {
+        print("2. Found segue")
         if let segue = segue {
             let destinationVC = segue.destination as! ShowRecipeViewController
             var destinationDS = destinationVC.router?.dataStore
@@ -46,10 +47,10 @@ class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing 
     
     func passDataToShowRecipe(source: ListRecipeDataStore, destination: inout ShowRecipeDataStore)
     {
+        print("3. Passing data")
         let selectedItemPath = viewController?.collectionView?.indexPathsForSelectedItems
         let selectedItem = selectedItemPath?.first?.item
         destination.recipe = source.recipes?[selectedItem!]
-        print("RECIPE ROUTING:",destination.recipe)
         
     }
 }

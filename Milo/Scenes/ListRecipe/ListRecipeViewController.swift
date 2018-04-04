@@ -52,8 +52,8 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
+        print("1. Asking for segue")
         if let scene = segue.identifier {
-            print("ROUTING!")
             let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
             if let router = router, router.responds(to: selector) {
                 router.perform(selector, with: segue)
@@ -71,12 +71,13 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     // MARK: Fetch Recipes
     
     func fetchRecipes(){
-        
+        print("1. Request recipe")
         let request = ListRecipe.FetchRecipes.Request()
         interactor?.fetchRecipes(request: request)
     }
     
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel) {
+        print("5. Showing on VC")
         displayedRecipes = viewModel.displayedRecipes
         collectionView?.reloadData()
     }
