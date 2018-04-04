@@ -37,10 +37,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </imageView>
+                                        <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFZ-5j-b0c" userLabel="darkenNameView">
+                                            <rect key="frame" x="0.0" y="48" width="100" height="50"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PvW-eC-aGj">
-                                            <rect key="frame" x="5" y="48" width="90" height="50"/>
+                                            <rect key="frame" x="2" y="48" width="98" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="F4z-9W-maw"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="hvZ-TC-6og"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="yMM-zp-ve3"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -50,11 +55,15 @@
                                     </subviews>
                                 </view>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FFZ-5j-b0c" secondAttribute="trailing" id="6o9-Ks-UMP"/>
+                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="trailing" secondItem="FFZ-5j-b0c" secondAttribute="trailing" id="GpB-nH-bmk"/>
                                     <constraint firstItem="e8s-1l-S7p" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" id="HLN-bc-FY5"/>
-                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" constant="5" id="X5Z-ks-7A1"/>
-                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="centerX" secondItem="SrP-Mv-PJy" secondAttribute="centerX" id="X7M-r9-6jm"/>
-                                    <constraint firstAttribute="bottom" secondItem="PvW-eC-aGj" secondAttribute="bottom" constant="2" id="ija-hS-VlB"/>
-                                    <constraint firstAttribute="trailing" secondItem="PvW-eC-aGj" secondAttribute="trailing" constant="5" id="kGM-Ge-GRI"/>
+                                    <constraint firstAttribute="bottom" secondItem="FFZ-5j-b0c" secondAttribute="bottom" constant="2" id="QpL-4t-x4F"/>
+                                    <constraint firstItem="FFZ-5j-b0c" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" id="YgV-4e-jHQ"/>
+                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="centerY" secondItem="FFZ-5j-b0c" secondAttribute="centerY" id="Z30-bS-IiX"/>
+                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="leading" secondItem="FFZ-5j-b0c" secondAttribute="leading" constant="2" id="Zm5-JP-SG7"/>
+                                    <constraint firstItem="FFZ-5j-b0c" firstAttribute="centerX" secondItem="SrP-Mv-PJy" secondAttribute="centerX" id="cHE-09-A1g"/>
+                                    <constraint firstItem="PvW-eC-aGj" firstAttribute="height" secondItem="FFZ-5j-b0c" secondAttribute="height" id="jHK-ej-yiN"/>
                                     <constraint firstItem="e8s-1l-S7p" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="nHO-xv-EkM"/>
                                     <constraint firstAttribute="bottom" secondItem="e8s-1l-S7p" secondAttribute="bottom" id="s7g-CC-bCg"/>
                                     <constraint firstAttribute="trailing" secondItem="e8s-1l-S7p" secondAttribute="trailing" id="vkV-iV-HAE"/>
