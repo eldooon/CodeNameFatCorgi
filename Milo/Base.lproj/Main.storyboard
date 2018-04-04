@@ -92,16 +92,16 @@
                                         <rect key="frame" x="-0.5" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHJ-gs-UcZ">
-                                                <rect key="frame" x="0.0" y="-124" width="375" height="375"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-Iw-064">
-                                                <rect key="frame" x="166.5" y="261" width="42" height="21"/>
+                                                <rect key="frame" x="166.5" y="385" width="42" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="34f-nj-BG2">
-                                                <rect key="frame" x="5" y="292" width="365" height="365"/>
+                                                <rect key="frame" x="5" y="416" width="365" height="241"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -117,7 +117,7 @@
                                             <constraint firstItem="kwW-Iw-064" firstAttribute="top" secondItem="XHJ-gs-UcZ" secondAttribute="bottom" constant="10" id="bCv-g0-qRs"/>
                                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="centerX" secondItem="eVB-S2-ile" secondAttribute="centerX" id="fej-bR-tFB"/>
                                             <constraint firstAttribute="trailing" secondItem="34f-nj-BG2" secondAttribute="trailing" constant="5" id="fuv-eK-B0P"/>
-                                            <constraint firstItem="XHJ-gs-UcZ" firstAttribute="top" secondItem="eVB-S2-ile" secondAttribute="top" constant="-124" id="g0D-RC-9co"/>
+                                            <constraint firstItem="XHJ-gs-UcZ" firstAttribute="top" secondItem="eVB-S2-ile" secondAttribute="top" id="g0D-RC-9co"/>
                                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="width" secondItem="eVB-S2-ile" secondAttribute="width" id="mL6-04-xSw"/>
                                             <constraint firstItem="XHJ-gs-UcZ" firstAttribute="height" secondItem="eVB-S2-ile" secondAttribute="width" id="ngE-bH-SRS"/>
                                         </constraints>
@@ -141,6 +141,8 @@
                         <viewLayoutGuide key="safeArea" id="q9C-s9-Gmz"/>
                     </view>
                     <connections>
+                        <outlet property="recipeDescriptionTextView" destination="34f-nj-BG2" id="1DD-Q1-jGA"/>
+                        <outlet property="recipeImageView" destination="XHJ-gs-UcZ" id="nXb-PE-7B5"/>
                         <outlet property="recipeNameLabel" destination="kwW-Iw-064" id="LIt-dx-pUe"/>
                     </connections>
                 </viewController>

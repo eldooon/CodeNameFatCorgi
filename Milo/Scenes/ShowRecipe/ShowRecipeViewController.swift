@@ -22,7 +22,9 @@ class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
   var interactor: ShowRecipeBusinessLogic?
   var router: (NSObjectProtocol & ShowRecipeRoutingLogic & ShowRecipeDataPassing)?
 
+    @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeDescriptionTextView: UITextView!
     // MARK: Object lifecycle
   
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -75,7 +77,8 @@ class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
   func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
   {
     let displayedsRecipe = viewModel.displayedRecipe
+    recipeImageView.image = displayedsRecipe.image
     recipeNameLabel.text = displayedsRecipe.name
-    
+    recipeDescriptionTextView.text = displayedsRecipe.description
   }
 }
