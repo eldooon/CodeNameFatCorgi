@@ -9,7 +9,7 @@
 import UIKit
 
 
-let turkey = Recipe(image: #imageLiteral(resourceName: "turkey"), name: "Turkey", description: "Turkey w/ Rice")
+let turkey = Recipe(image: #imageLiteral(resourceName: "turkey"), name: "Turkey", description: "Turkey w/ Rice, Turkey w/ Rice, Turkey w/ Rice, Turkey w/ Rice Turkey w/ Rice Turkey w/ Rice Turkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ Rice Turkey w/ Rice Turkey w/ Rice Turkey w/ Rice Turkey w/ Rice Turkey w/ Rice Turkey w/ RicevTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ RiceTurkey w/ Rice")
 let chicken = Recipe(image: #imageLiteral(resourceName: "chicken"), name: "Chicken", description: "Chicken w/ Rice")
 let beef = Recipe(image: #imageLiteral(resourceName: "beef"), name: "Beef", description: "Beef w/ Pasta")
 
