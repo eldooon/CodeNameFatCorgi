@@ -54,7 +54,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-ZT-DsD">
-                                            <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                            <rect key="frame" x="80" y="5" width="15" height="15"/>
                                             <state key="normal" image="add"/>
                                             <connections>
                                                 <action selector="addRecipeButtonTapped:" destination="nI4-Qh-3Ar" eventType="touchUpInside" id="SGX-lv-DeY"/>
@@ -63,22 +63,22 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="width" secondItem="SrP-Mv-PJy" secondAttribute="width" multiplier="0.3" id="59W-MQ-xhp"/>
-                                    <constraint firstAttribute="trailing" secondItem="FFZ-5j-b0c" secondAttribute="trailing" id="6o9-Ks-UMP"/>
+                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="width" secondItem="SrP-Mv-PJy" secondAttribute="width" multiplier="0.15" id="59W-MQ-xhp"/>
+                                    <constraint firstItem="FFZ-5j-b0c" firstAttribute="trailing" secondItem="SrP-Mv-PJy" secondAttribute="trailing" id="6o9-Ks-UMP"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="trailing" secondItem="FFZ-5j-b0c" secondAttribute="trailing" id="GpB-nH-bmk"/>
                                     <constraint firstItem="e8s-1l-S7p" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" id="HLN-bc-FY5"/>
-                                    <constraint firstAttribute="bottom" secondItem="FFZ-5j-b0c" secondAttribute="bottom" constant="2" id="QpL-4t-x4F"/>
+                                    <constraint firstItem="FFZ-5j-b0c" firstAttribute="bottom" secondItem="SrP-Mv-PJy" secondAttribute="bottom" constant="-2" id="QpL-4t-x4F"/>
                                     <constraint firstItem="FFZ-5j-b0c" firstAttribute="leading" secondItem="SrP-Mv-PJy" secondAttribute="leading" id="YgV-4e-jHQ"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="centerY" secondItem="FFZ-5j-b0c" secondAttribute="centerY" id="Z30-bS-IiX"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="leading" secondItem="FFZ-5j-b0c" secondAttribute="leading" constant="2" id="Zm5-JP-SG7"/>
-                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="height" secondItem="SrP-Mv-PJy" secondAttribute="height" multiplier="0.3" id="cA3-Tl-Za3"/>
+                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="height" secondItem="SrP-Mv-PJy" secondAttribute="height" multiplier="0.15" id="cA3-Tl-Za3"/>
                                     <constraint firstItem="FFZ-5j-b0c" firstAttribute="centerX" secondItem="SrP-Mv-PJy" secondAttribute="centerX" id="cHE-09-A1g"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="height" secondItem="FFZ-5j-b0c" secondAttribute="height" id="jHK-ej-yiN"/>
-                                    <constraint firstAttribute="trailing" secondItem="nqc-ZT-DsD" secondAttribute="trailing" id="lfD-Mz-rDO"/>
+                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="trailing" secondItem="SrP-Mv-PJy" secondAttribute="trailing" constant="-5" id="lfD-Mz-rDO"/>
                                     <constraint firstItem="e8s-1l-S7p" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="nHO-xv-EkM"/>
-                                    <constraint firstAttribute="bottom" secondItem="e8s-1l-S7p" secondAttribute="bottom" id="s7g-CC-bCg"/>
-                                    <constraint firstAttribute="trailing" secondItem="e8s-1l-S7p" secondAttribute="trailing" id="vkV-iV-HAE"/>
-                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="xeB-ST-nvJ"/>
+                                    <constraint firstItem="e8s-1l-S7p" firstAttribute="bottom" secondItem="SrP-Mv-PJy" secondAttribute="bottom" id="s7g-CC-bCg"/>
+                                    <constraint firstItem="e8s-1l-S7p" firstAttribute="trailing" secondItem="SrP-Mv-PJy" secondAttribute="trailing" id="vkV-iV-HAE"/>
+                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" constant="5" id="xeB-ST-nvJ"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="e8s-1l-S7p" id="iDh-kv-IaK"/>
