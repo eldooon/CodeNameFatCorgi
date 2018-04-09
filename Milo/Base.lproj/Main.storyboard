@@ -54,7 +54,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqc-ZT-DsD">
-                                            <rect key="frame" x="68" y="2" width="30" height="30"/>
+                                            <rect key="frame" x="70" y="0.0" width="30" height="30"/>
                                             <state key="normal" image="add"/>
                                             <connections>
                                                 <action selector="addRecipeButtonTapped:" destination="nI4-Qh-3Ar" eventType="touchUpInside" id="SGX-lv-DeY"/>
@@ -74,11 +74,11 @@
                                     <constraint firstItem="nqc-ZT-DsD" firstAttribute="height" secondItem="SrP-Mv-PJy" secondAttribute="height" multiplier="0.3" id="cA3-Tl-Za3"/>
                                     <constraint firstItem="FFZ-5j-b0c" firstAttribute="centerX" secondItem="SrP-Mv-PJy" secondAttribute="centerX" id="cHE-09-A1g"/>
                                     <constraint firstItem="PvW-eC-aGj" firstAttribute="height" secondItem="FFZ-5j-b0c" secondAttribute="height" id="jHK-ej-yiN"/>
-                                    <constraint firstAttribute="trailing" secondItem="nqc-ZT-DsD" secondAttribute="trailing" constant="2" id="lfD-Mz-rDO"/>
+                                    <constraint firstAttribute="trailing" secondItem="nqc-ZT-DsD" secondAttribute="trailing" id="lfD-Mz-rDO"/>
                                     <constraint firstItem="e8s-1l-S7p" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="nHO-xv-EkM"/>
                                     <constraint firstAttribute="bottom" secondItem="e8s-1l-S7p" secondAttribute="bottom" id="s7g-CC-bCg"/>
                                     <constraint firstAttribute="trailing" secondItem="e8s-1l-S7p" secondAttribute="trailing" id="vkV-iV-HAE"/>
-                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" constant="2" id="xeB-ST-nvJ"/>
+                                    <constraint firstItem="nqc-ZT-DsD" firstAttribute="top" secondItem="SrP-Mv-PJy" secondAttribute="top" id="xeB-ST-nvJ"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="e8s-1l-S7p" id="iDh-kv-IaK"/>
@@ -178,6 +178,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHJ-gs-UcZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwW-Iw-064">
                                                 <rect key="frame" x="166.5" y="385" width="42" height="21"/>
@@ -284,6 +285,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add" width="40" height="40"/>
+        <image name="add" width="25" height="25"/>
     </resources>
 </document>
