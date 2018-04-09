@@ -14,6 +14,7 @@ import UIKit
 
 protocol ShowRecipeBusinessLogic {
     func getRecipe(request: ShowRecipe.GetRecipe.Request)
+    func addRecipe(request: ShowRecipe.AddRecipe.Request)
 }
 
 protocol ShowRecipeDataStore {
@@ -33,4 +34,10 @@ class ShowRecipeInteractor: ShowRecipeBusinessLogic, ShowRecipeDataStore {
         let response = ShowRecipe.GetRecipe.Response(recipe: recipe)
         presenter?.presentRecipe(response: response)
     }
+    
+    func addRecipe(request: ShowRecipe.AddRecipe.Request) {
+        MyRecipeMemStore.addRecipe(recipe: recipe)
+        print(MyRecipeMemStore.recipes)
+    }
+    
 }

@@ -31,4 +31,9 @@ enum ListRecipe
             var displayedRecipes: [DisplayedRecipes]
         }
     }
+    
+    enum AddRecipe {
+        struct Request {
+        }
+    }
 }

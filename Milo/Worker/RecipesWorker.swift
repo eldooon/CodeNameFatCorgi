@@ -28,6 +28,12 @@ class RecipesWorkers {
         completionHandler(testData, nil)
     }
     
+    func fetchMyRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
+        //Temporary Test Data
+        let myRecipes = MyRecipeMemStore.recipes
+        completionHandler(myRecipes, nil)
+    }
+    
 }
 
 enum RecipesStoreError: Equatable, Error

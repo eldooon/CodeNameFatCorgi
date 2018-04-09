@@ -12,20 +12,22 @@
 
 import UIKit
 
-enum MyRecipe
-{
+enum MyRecipe {
   // MARK: Use cases
   
-  enum Something
-  {
-    struct Request
-    {
+  enum FetchMyRecipes {
+    struct Request {
     }
-    struct Response
-    {
+    struct Response {
+        var myRecipes: [Recipe]
     }
-    struct ViewModel
-    {
+    struct ViewModel {
+        struct DisplayedRecipe {
+            var image: UIImage
+            var name: String
+            var description: String
+        }
+        var displayedRecipes: [DisplayedRecipe]
     }
   }
 }

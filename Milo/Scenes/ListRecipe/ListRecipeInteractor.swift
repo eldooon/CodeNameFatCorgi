@@ -14,6 +14,7 @@ import UIKit
 
 protocol ListRecipeBusinessLogic {
     func fetchRecipes(request: ListRecipe.FetchRecipes.Request)
+    func addRecipe(recipe: Recipe, request: ListRecipe.AddRecipe.Request)
 }
 
 protocol ListRecipeDataStore {
@@ -37,5 +38,13 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
         }
         
     }
+    
+    func addRecipe(recipe: Recipe, request: ListRecipe.AddRecipe.Request) {
+        
+        MyRecipeMemStore.addRecipe(recipe: recipe)
+        
+    }
+    
+    
     
 }

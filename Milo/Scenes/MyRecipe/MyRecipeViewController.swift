@@ -12,78 +12,85 @@
 
 import UIKit
 
-protocol MyRecipeDisplayLogic: class
-{
-  func displaySomething(viewModel: MyRecipe.Something.ViewModel)
+protocol MyRecipeDisplayLogic: class {
+    func displayMyRecipes(viewModel: MyRecipe.FetchMyRecipes.ViewModel)
 }
 
-class MyRecipeViewController: UITableViewController, MyRecipeDisplayLogic
-{
-  var interactor: MyRecipeBusinessLogic?
-  var router: (NSObjectProtocol & MyRecipeRoutingLogic & MyRecipeDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = MyRecipeInteractor()
-    let presenter = MyRecipePresenter()
-    let router = MyRecipeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+class MyRecipeViewController: UITableViewController, MyRecipeDisplayLogic {
+    var interactor: MyRecipeBusinessLogic?
+    var router: (NSObjectProtocol & MyRecipeRoutingLogic & MyRecipeDataPassing)?
+    var displayedRecipes: [MyRecipe.FetchMyRecipes.ViewModel.DisplayedRecipe] = []
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = MyRecipe.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: MyRecipe.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController = self
+        let interactor = MyRecipeInteractor()
+        let presenter = MyRecipePresenter()
+        let router = MyRecipeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchMyRecipe()
+    }
+    
+    // MARK: Do something
+    
+    func fetchMyRecipe() {
+        let request = MyRecipe.FetchMyRecipes.Request()
+        interactor?.fetchMyRecipes(request: request)
+    }
+    
+    func displayMyRecipes(viewModel: MyRecipe.FetchMyRecipes.ViewModel) {
+        displayedRecipes = viewModel.displayedRecipes
+        tableView.reloadData()
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return displayedRecipes.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
+        cell.textLabel?.text = displayedRecipes[indexPath.row].name
+        cell.detailTextLabel?.text = displayedRecipes[indexPath.row].description
+        return cell
+    }
+    
 }

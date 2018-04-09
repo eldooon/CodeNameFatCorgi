@@ -30,4 +30,9 @@ enum ShowRecipe {
             var displayedRecipe: DisplayedRecipe
         }
     }
+    
+    enum AddRecipe {
+        struct Request {
+        }
+    }
 }

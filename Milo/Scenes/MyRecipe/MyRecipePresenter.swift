@@ -12,20 +12,26 @@
 
 import UIKit
 
-protocol MyRecipePresentationLogic
-{
-  func presentSomething(response: MyRecipe.Something.Response)
+protocol MyRecipePresentationLogic {
+  func presentMyRecipes(response: MyRecipe.FetchMyRecipes.Response)
 }
 
-class MyRecipePresenter: MyRecipePresentationLogic
-{
+class MyRecipePresenter: MyRecipePresentationLogic {
   weak var viewController: MyRecipeDisplayLogic?
   
   // MARK: Do something
   
-  func presentSomething(response: MyRecipe.Something.Response)
-  {
-    let viewModel = MyRecipe.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
+  func presentMyRecipes(response: MyRecipe.FetchMyRecipes.Response) {
+
+    
+    var displayedMyRecipes: [MyRecipe.FetchMyRecipes.ViewModel.DisplayedRecipe] = []
+    for recipe in response.myRecipes {
+        
+        let displayedRecipe = MyRecipe.FetchMyRecipes.ViewModel.DisplayedRecipe(image: recipe.image, name: recipe.name, description: recipe.description)
+        displayedMyRecipes.append(displayedRecipe)
+    }
+    
+    let viewModel = MyRecipe.FetchMyRecipes.ViewModel(displayedRecipes: displayedMyRecipes)
+    viewController?.displayMyRecipes(viewModel: viewModel)
   }
 }

@@ -12,73 +12,76 @@
 
 import UIKit
 
-protocol ShowRecipeDisplayLogic: class
-{
-  func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
+protocol ShowRecipeDisplayLogic: class {
+    func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
 }
 
-class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic
-{
-  var interactor: ShowRecipeBusinessLogic?
-  var router: (NSObjectProtocol & ShowRecipeRoutingLogic & ShowRecipeDataPassing)?
-
+class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic {
+    
+    var interactor: ShowRecipeBusinessLogic?
+    var router: (NSObjectProtocol & ShowRecipeRoutingLogic & ShowRecipeDataPassing)?
+    
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeNameLabel: UILabel!
     @IBOutlet weak var recipeDescriptionTextView: UITextView!
     // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ShowRecipeInteractor()
-    let presenter = ShowRecipePresenter()
-    let router = ShowRecipeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-   
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func doSomething()
-  {
-    let request = ShowRecipe.GetRecipe.Request()
-    interactor?.getRecipe(request: request)
-  }
-  
-  func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
-  {
-    let displayedsRecipe = viewModel.displayedRecipe
-    recipeImageView.image = displayedsRecipe.image
-    recipeNameLabel.text = displayedsRecipe.name
-    recipeDescriptionTextView.text = displayedsRecipe.description
-  }
+    
+    @IBAction func addRecipeButtonTapped(_ sender: Any) {
+        let request = ShowRecipe.AddRecipe.Request()
+        interactor?.addRecipe(request: request)
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ShowRecipeInteractor()
+        let presenter = ShowRecipePresenter()
+        let router = ShowRecipeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        getRecipe()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+    func getRecipe()
+    {
+        let request = ShowRecipe.GetRecipe.Request()
+        interactor?.getRecipe(request: request)
+    }
+    
+    func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
+    {
+        let displayedsRecipe = viewModel.displayedRecipe
+        recipeImageView.image = displayedsRecipe.image
+        recipeNameLabel.text = displayedsRecipe.name
+        recipeDescriptionTextView.text = displayedsRecipe.description
+    }
 }

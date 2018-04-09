@@ -21,6 +21,13 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
     var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
     
+    @IBAction func addRecipeButtonTapped(_ sender: Any) {
+        
+        print("Add Button Tapped!")
+//        let request = ListRecipe.AddRecipe.Request
+//        interactor?.addRecipe(recipe: <#T##Recipe#>, request: request)
+    }
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
