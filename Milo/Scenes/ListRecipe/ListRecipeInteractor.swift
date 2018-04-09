@@ -14,7 +14,7 @@ import UIKit
 
 protocol ListRecipeBusinessLogic {
     func fetchRecipes(request: ListRecipe.FetchRecipes.Request)
-    func addRecipe(recipe: Recipe, request: ListRecipe.AddRecipe.Request)
+    func addRecipe(indexPath: Int, request: ListRecipe.AddRecipe.Request)
 }
 
 protocol ListRecipeDataStore {
@@ -39,8 +39,9 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
         
     }
     
-    func addRecipe(recipe: Recipe, request: ListRecipe.AddRecipe.Request) {
+    func addRecipe(indexPath: Int, request: ListRecipe.AddRecipe.Request) {
         
+        guard let recipe = recipes?[indexPath] else {return}
         MyRecipeMemStore.addRecipe(recipe: recipe)
         
     }

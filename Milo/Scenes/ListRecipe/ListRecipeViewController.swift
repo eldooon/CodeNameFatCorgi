@@ -12,7 +12,7 @@
 
 import UIKit
 
-protocol ListRecipeDisplayLogic: class{
+protocol ListRecipeDisplayLogic: class {
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel)
 }
 
@@ -21,11 +21,12 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
     var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
     
-    @IBAction func addRecipeButtonTapped(_ sender: Any) {
+    @IBAction func addRecipeButtonTapped(_ sender: AnyObject) {
         
-        print("Add Button Tapped!")
-//        let request = ListRecipe.AddRecipe.Request
-//        interactor?.addRecipe(recipe: <#T##Recipe#>, request: request)
+        let buttonPosition:CGPoint = sender.convert(CGPoint.zero, to: self.collectionView)
+        guard let indexPath = self.collectionView?.indexPathForItem(at: buttonPosition) else {return}
+        let request = ListRecipe.AddRecipe.Request()
+        interactor?.addRecipe(indexPath: indexPath.item, request: request)
     }
     
     // MARK: Object lifecycle
