@@ -59,6 +59,6 @@ class MyRecipeCoreDataStore: RecipesStoreProtocol {
             print("Failed to add recipe:", err)
         }
     
-    
+    }
     
 }
