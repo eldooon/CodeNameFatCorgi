@@ -67,6 +67,7 @@ class MyRecipeViewController: UITableViewController, MyRecipeDisplayLogic {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
         fetchMyRecipe()
     }
     
@@ -79,7 +80,7 @@ class MyRecipeViewController: UITableViewController, MyRecipeDisplayLogic {
     
     func displayMyRecipes(viewModel: MyRecipe.FetchMyRecipes.ViewModel) {
         displayedRecipes = viewModel.displayedRecipes
-        tableView.reloadData()
+//        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

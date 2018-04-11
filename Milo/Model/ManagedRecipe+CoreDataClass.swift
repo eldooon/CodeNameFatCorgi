@@ -22,6 +22,8 @@ public class ManagedRecipe: NSManagedObject {
     }
     
     func fromRecipe(recipe: Recipe) {
+        let data = UIImagePNGRepresentation(recipe.image)
+        image = NSData(data: data!)
         name = recipe.name
         descriptions = recipe.description
     }

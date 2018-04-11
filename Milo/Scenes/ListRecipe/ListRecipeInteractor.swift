@@ -25,6 +25,7 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     
     var presenter: ListRecipePresentationLogic?
     var recipeWorker = RecipesWorkers(recipesStore: TestRecipe())
+    var recipeAddWorker = RecipesWorkers(recipesStore: MyRecipeCoreDataStore())
     var recipes: [Recipe]?
     
     // MARK: Do something
@@ -42,7 +43,13 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     func addRecipe(indexPath: Int, request: ListRecipe.AddRecipe.Request) {
         
         guard let recipe = recipes?[indexPath] else {return}
-        MyRecipeMemStore.addRecipe(recipe: recipe)
+        MyRecipeCoreDataStore.shared.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
+            print("Clicked to attempt to add recipe")
+        }
+//        recipeAddWorker.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
+//            //
+//            print("Clicked to attempt to add recipe")
+//        }
         
     }
     

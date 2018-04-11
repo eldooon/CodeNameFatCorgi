@@ -23,7 +23,7 @@ protocol MyRecipeDataStore {
 class MyRecipeInteractor: MyRecipeBusinessLogic, MyRecipeDataStore {
 
     var presenter: MyRecipePresentationLogic?
-    var worker = RecipesWorkers(recipesStore: MyRecipeMemStore())
+    var worker = RecipesWorkers(recipesStore: MyRecipeCoreDataStore())
     var recipes: [Recipe]?
     
     
@@ -31,11 +31,27 @@ class MyRecipeInteractor: MyRecipeBusinessLogic, MyRecipeDataStore {
     
     func fetchMyRecipes(request: MyRecipe.FetchMyRecipes.Request)
     {
-        
-        worker.fetchMyRecipes { (recipes, error) in
-            self.recipes = recipes
-            let response = MyRecipe.FetchMyRecipes.Response(myRecipes: recipes)
-            self.presenter?.presentMyRecipes(response: response)
+        MyRecipeCoreDataStore.shared.persistentContainer.performBackgroundTask { (backgroundContext) in
+            
+            do {
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    MyRecipeCoreDataStore.shared.fetchRecipes { (recipes, error) in
+                        print(recipes)
+                        self.recipes = recipes
+                        let response = MyRecipe.FetchMyRecipes.Response(myRecipes: recipes)
+                        self.presenter?.presentMyRecipes(response: response)
+                    }
+                }
+            } catch let err {
+                print("Failed to save:", err)
+            }
         }
+//        worker.fetchMyRecipes { (recipes, error) in
+//            print(recipes)
+//            self.recipes = recipes
+//            let response = MyRecipe.FetchMyRecipes.Response(myRecipes: recipes)
+//            self.presenter?.presentMyRecipes(response: response)
+//        }
     }
 }

@@ -15,7 +15,7 @@ protocol RecipesStoreProtocol {
     func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void)
 }
 
-class RecipesWorkers {
+class RecipesWorkers: RecipesStoreProtocol {
     
     var recipesStore: RecipesStoreProtocol
     
@@ -33,6 +33,10 @@ class RecipesWorkers {
         //Temporary Test Data
         let myRecipes = MyRecipeMemStore.recipes
         completionHandler(myRecipes, nil)
+    }
+    
+    func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void) {
+        completionHandler(recipeToAdd, nil)
     }
     
 }
