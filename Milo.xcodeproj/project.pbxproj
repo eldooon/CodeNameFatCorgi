@@ -24,6 +24,9 @@
 		BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466943206C7E73000AC6C3 /* Recipe.swift */; };
 		BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466946206D4040000AC6C3 /* TestRecipes.swift */; };
 		BE46694A206D9605000AC6C3 /* RecipesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE466949206D9605000AC6C3 /* RecipesWorker.swift */; };
+		BE92A1BB207C05BA005BB072 /* Milo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE92A1B9207C05BA005BB072 /* Milo.xcdatamodeld */; };
+		BE92A1C2207C07E3005BB072 /* ManagedRecipe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92A1C0207C07E3005BB072 /* ManagedRecipe+CoreDataClass.swift */; };
+		BE92A1C3207C07E3005BB072 /* ManagedRecipe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE92A1C1207C07E3005BB072 /* ManagedRecipe+CoreDataProperties.swift */; };
 		BEB94295206BFA2700F1FEE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */; };
 		BEB9429A206BFA2700F1FEE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB94298206BFA2700F1FEE1 /* Main.storyboard */; };
 		BEB9429C206BFA2700F1FEE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */; };
@@ -34,6 +37,7 @@
 		BEB942B3206BFCCD00F1FEE1 /* ListRecipeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB942AD206BFCCD00F1FEE1 /* ListRecipeModels.swift */; };
 		BEB942B4206BFCCD00F1FEE1 /* ListRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB942AE206BFCCD00F1FEE1 /* ListRecipeViewController.swift */; };
 		BEB942B5206BFCCD00F1FEE1 /* ListRecipeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB942AF206BFCCD00F1FEE1 /* ListRecipeInteractor.swift */; };
+		BEE1B981207D179F00A99BB8 /* MyRecipeCoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE1B980207D179F00A99BB8 /* MyRecipeCoreDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		BE466943206C7E73000AC6C3 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		BE466946206D4040000AC6C3 /* TestRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRecipes.swift; sourceTree = "<group>"; };
 		BE466949206D9605000AC6C3 /* RecipesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesWorker.swift; sourceTree = "<group>"; };
+		BE92A1BA207C05BA005BB072 /* Milo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Milo.xcdatamodel; sourceTree = "<group>"; };
+		BE92A1C0207C07E3005BB072 /* ManagedRecipe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedRecipe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		BE92A1C1207C07E3005BB072 /* ManagedRecipe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedRecipe+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BEB94291206BFA2700F1FEE1 /* Milo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Milo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB94294206BFA2700F1FEE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEB94299206BFA2700F1FEE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		BEB942AD206BFCCD00F1FEE1 /* ListRecipeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeModels.swift; sourceTree = "<group>"; };
 		BEB942AE206BFCCD00F1FEE1 /* ListRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeViewController.swift; sourceTree = "<group>"; };
 		BEB942AF206BFCCD00F1FEE1 /* ListRecipeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeInteractor.swift; sourceTree = "<group>"; };
+		BEE1B980207D179F00A99BB8 /* MyRecipeCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeCoreDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BE313E6320782E04008B99E8 /* MyRecipeMemStore.swift */,
+				BEE1B980207D179F00A99BB8 /* MyRecipeCoreDataStore.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -125,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				BE466943206C7E73000AC6C3 /* Recipe.swift */,
+				BE92A1C0207C07E3005BB072 /* ManagedRecipe+CoreDataClass.swift */,
+				BE92A1C1207C07E3005BB072 /* ManagedRecipe+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 				BEB9429B206BFA2700F1FEE1 /* Assets.xcassets */,
 				BEB9429D206BFA2700F1FEE1 /* LaunchScreen.storyboard */,
 				BEB942A0206BFA2700F1FEE1 /* Info.plist */,
+				BE92A1B9207C05BA005BB072 /* Milo.xcdatamodeld */,
 			);
 			path = Milo;
 			sourceTree = "<group>";
@@ -281,17 +293,21 @@
 				BE313E532072A472008B99E8 /* ShowRecipeViewController.swift in Sources */,
 				BE46694A206D9605000AC6C3 /* RecipesWorker.swift in Sources */,
 				BEB942B4206BFCCD00F1FEE1 /* ListRecipeViewController.swift in Sources */,
+				BE92A1C3207C07E3005BB072 /* ManagedRecipe+CoreDataProperties.swift in Sources */,
 				BE313E512072A472008B99E8 /* ShowRecipeRouter.swift in Sources */,
 				BE313E5D2077F4B4008B99E8 /* MyRecipeWorker.swift in Sources */,
 				BE313E502072A472008B99E8 /* ShowRecipeWorker.swift in Sources */,
 				BEB942B0206BFCCD00F1FEE1 /* ListRecipePresenter.swift in Sources */,
 				BEB942B5206BFCCD00F1FEE1 /* ListRecipeInteractor.swift in Sources */,
 				BEB942B1206BFCCD00F1FEE1 /* ListRecipeWorker.swift in Sources */,
+				BE92A1C2207C07E3005BB072 /* ManagedRecipe+CoreDataClass.swift in Sources */,
 				BEB942B2206BFCCD00F1FEE1 /* ListRecipeRouter.swift in Sources */,
+				BEE1B981207D179F00A99BB8 /* MyRecipeCoreDataStore.swift in Sources */,
 				BEB942B3206BFCCD00F1FEE1 /* ListRecipeModels.swift in Sources */,
 				BE313E612077F4B4008B99E8 /* MyRecipeInteractor.swift in Sources */,
 				BE466947206D4040000AC6C3 /* TestRecipes.swift in Sources */,
 				BE313E4F2072A472008B99E8 /* ShowRecipePresenter.swift in Sources */,
+				BE92A1BB207C05BA005BB072 /* Milo.xcdatamodeld in Sources */,
 				BE313E522072A472008B99E8 /* ShowRecipeModels.swift in Sources */,
 				BE466944206C7E73000AC6C3 /* Recipe.swift in Sources */,
 				BE313E602077F4B4008B99E8 /* MyRecipeViewController.swift in Sources */,
@@ -482,6 +498,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BE92A1B9207C05BA005BB072 /* Milo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BE92A1BA207C05BA005BB072 /* Milo.xcdatamodel */,
+			);
+			currentVersion = BE92A1BA207C05BA005BB072 /* Milo.xcdatamodel */;
+			path = Milo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BEB94289206BFA2700F1FEE1 /* Project object */;
 }

@@ -10,9 +10,10 @@ import UIKit
 
 class MyRecipeMemStore: RecipesStoreProtocol {
     
+    
     static var recipes: [Recipe] = []
     
-    func fetchOrders(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
+    func fetchRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
         completionHandler(type(of: self).recipes, nil)
     }
     
@@ -20,4 +21,7 @@ class MyRecipeMemStore: RecipesStoreProtocol {
         MyRecipeMemStore.recipes.append(recipe)
     }
     
+    func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void) {
+        //
+    }
 }

@@ -14,10 +14,13 @@ let chicken = Recipe(image: #imageLiteral(resourceName: "chicken"), name: "Chick
 let beef = Recipe(image: #imageLiteral(resourceName: "beef"), name: "Beef", description: "Beef w/ Pasta")
 
 class TestRecipe: RecipesStoreProtocol {
-    
     static let testRecipeData = [turkey, chicken, beef]
     
-    func fetchOrders(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
+    func fetchRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
         completionHandler(type(of: self).testRecipeData, nil)
+    }
+    
+    func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void) {
+        //
     }
 }

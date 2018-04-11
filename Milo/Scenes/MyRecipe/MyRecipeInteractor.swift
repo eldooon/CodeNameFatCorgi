@@ -33,7 +33,6 @@ class MyRecipeInteractor: MyRecipeBusinessLogic, MyRecipeDataStore {
     {
         
         worker.fetchMyRecipes { (recipes, error) in
-            dump(recipes)
             self.recipes = recipes
             let response = MyRecipe.FetchMyRecipes.Response(myRecipes: recipes)
             self.presenter?.presentMyRecipes(response: response)

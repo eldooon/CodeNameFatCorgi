@@ -11,7 +11,8 @@ import Foundation
 //Recipe Workers
 
 protocol RecipesStoreProtocol {
-    func fetchOrders(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void)
+    func fetchRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void)
+    func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void)
 }
 
 class RecipesWorkers {

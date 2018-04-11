@@ -47,7 +47,7 @@ class ListRecipeRouter: NSObject, ListRecipeRoutingLogic, ListRecipeDataPassing 
     
     func passDataToShowRecipe(source: ListRecipeDataStore, destination: inout ShowRecipeDataStore)
     {
-        print("3. Passing data")
+        print("3. Passing data"g)
         let selectedItemPath = viewController?.collectionView?.indexPathsForSelectedItems
         let selectedItem = selectedItemPath?.first?.item
         destination.recipe = source.recipes?[selectedItem!]
