@@ -43,8 +43,13 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     func addRecipe(indexPath: Int, request: ListRecipe.AddRecipe.Request) {
         
         guard let recipe = recipes?[indexPath] else {return}
-        MyRecipeCoreDataStore.shared.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
-            print("Clicked to attempt to add recipe")
+        
+        if checkIfAdded(recipetoAdd: recipe) == false {
+            MyRecipeCoreDataStore.shared.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
+                print("Clicked to attempt to add recipe")
+            }
+        } else {
+            print("Already favorited!")
         }
 //        recipeAddWorker.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
 //            //
@@ -53,6 +58,19 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
         
     }
     
-    
+    func checkIfAdded(recipetoAdd: Recipe) -> Bool{
+        
+        var isAdded = false
+        
+        MyRecipeCoreDataStore.shared.fetchRecipes { (recipes, error) in
+            for recipe in recipes {
+                if recipe.name == recipetoAdd.name {
+                    isAdded = true
+                }
+            }
+        }
+        
+        return isAdded
+    }
     
 }
