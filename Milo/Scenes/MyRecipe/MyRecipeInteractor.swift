@@ -32,7 +32,6 @@ class MyRecipeInteractor: MyRecipeBusinessLogic, MyRecipeDataStore {
     func fetchMyRecipes(request: MyRecipe.FetchMyRecipes.Request)
     {
         MyRecipeCoreDataStore.shared.persistentContainer.performBackgroundTask { (backgroundContext) in
-            
             do {
                 try backgroundContext.save()
                 DispatchQueue.main.async {
