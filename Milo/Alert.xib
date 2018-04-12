@@ -43,6 +43,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="alertImage" destination="Wkg-Wl-ogL" id="36p-N2-6wv"/>
+                <outlet property="alertLabel" destination="ubc-uk-FSC" id="dm3-cN-05f"/>
+            </connections>
             <point key="canvasLocation" x="-17" y="-160.5"/>
         </view>
     </objects>
