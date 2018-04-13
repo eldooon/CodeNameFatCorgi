@@ -14,9 +14,11 @@ import UIKit
 
 protocol ListRecipeDisplayLogic: class {
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel)
+    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel)
 }
 
 class ListRecipeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ListRecipeDisplayLogic {
+    
     var interactor: ListRecipeBusinessLogic?
     var router: (NSObjectProtocol & ListRecipeRoutingLogic & ListRecipeDataPassing)?
     var displayedRecipes: [ListRecipe.FetchRecipes.ViewModel.DisplayedRecipes] = []
@@ -84,11 +86,18 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
         interactor?.fetchRecipes(request: request)
     }
     
+    // MARK: Display
+    
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel) {
         print("5. Showing on VC")
         displayedRecipes = viewModel.displayedRecipes
         collectionView?.reloadData()
     }
+    
+    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel) {
+        
+    }
+    
     
     //Collectionview Setup
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

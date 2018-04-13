@@ -50,6 +50,9 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
             }
         } else {
             print("Already favorited!")
+            let response = ListRecipe.AddRecipe.Response()
+            self.presenter?.presentAlert(response: response)
+            
         }
 //        recipeAddWorker.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
 //            //

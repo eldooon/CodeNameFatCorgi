@@ -14,6 +14,7 @@ import UIKit
 
 protocol ListRecipePresentationLogic {
     func presentFetchedRecipes(response: ListRecipe.FetchRecipes.Response)
+    func presentAlert(response: ListRecipe.AddRecipe.Response)
 }
 
 class ListRecipePresenter: ListRecipePresentationLogic {
@@ -32,5 +33,10 @@ class ListRecipePresenter: ListRecipePresentationLogic {
         
         let viewModel = ListRecipe.FetchRecipes.ViewModel(displayedRecipes: displayedRecipes)
         viewController?.displayFetchRecipes(viewModel: viewModel)
+    }
+    
+    func presentAlert(response: ListRecipe.AddRecipe.Response) {
+        let viewModel = ListRecipe.AddRecipe.ViewModel()
+        viewController?.displayAddRecipe(viewModel: viewModel)
     }
 }

@@ -58,6 +58,7 @@
                                             <state key="normal" image="add"/>
                                             <connections>
                                                 <action selector="addRecipeButtonTapped:" destination="nI4-Qh-3Ar" eventType="touchUpInside" id="SGX-lv-DeY"/>
+                                                <segue destination="tfa-1J-fuG" kind="presentation" modalTransitionStyle="crossDissolve" id="bPy-fj-Wkj"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -162,6 +163,63 @@
             </objects>
             <point key="canvasLocation" x="1487" y="789"/>
         </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="Yr6-Qg-ByK">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="tfa-1J-fuG" customClass="AlertViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lsl-Um-bgI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-QJ-s2Z">
+                                <rect key="frame" x="65" y="225.5" width="244" height="187.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brokenHeart" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-Cn-zDy">
+                                        <rect key="frame" x="61.5" y="10" width="121.5" height="122"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya7-Zl-Cuq">
+                                        <rect key="frame" x="12.5" y="142" width="219" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Ya7-Zl-Cuq" firstAttribute="width" secondItem="v8V-QJ-s2Z" secondAttribute="width" multiplier="0.9" id="90f-LT-WEA"/>
+                                    <constraint firstItem="xcR-Cn-zDy" firstAttribute="centerX" secondItem="v8V-QJ-s2Z" secondAttribute="centerX" id="EJO-zy-FQP"/>
+                                    <constraint firstItem="Ya7-Zl-Cuq" firstAttribute="top" secondItem="xcR-Cn-zDy" secondAttribute="bottom" constant="10" id="GfO-rK-YpV"/>
+                                    <constraint firstItem="xcR-Cn-zDy" firstAttribute="top" secondItem="v8V-QJ-s2Z" secondAttribute="top" constant="10" id="LSn-9v-VHY"/>
+                                    <constraint firstItem="xcR-Cn-zDy" firstAttribute="width" secondItem="v8V-QJ-s2Z" secondAttribute="width" multiplier="0.5" id="Rwd-eP-z18"/>
+                                    <constraint firstItem="Ya7-Zl-Cuq" firstAttribute="centerX" secondItem="xcR-Cn-zDy" secondAttribute="centerX" id="afU-gO-07o"/>
+                                    <constraint firstItem="xcR-Cn-zDy" firstAttribute="height" secondItem="v8V-QJ-s2Z" secondAttribute="width" multiplier="0.5" id="iHd-ad-PFU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v8V-QJ-s2Z" firstAttribute="width" secondItem="Lsl-Um-bgI" secondAttribute="width" multiplier="0.65" id="0tx-OB-ySF"/>
+                            <constraint firstItem="v8V-QJ-s2Z" firstAttribute="centerX" secondItem="JcE-Fc-q9S" secondAttribute="centerX" id="Bgm-Ay-O4v"/>
+                            <constraint firstItem="v8V-QJ-s2Z" firstAttribute="centerY" secondItem="JcE-Fc-q9S" secondAttribute="centerY" id="Yfd-ho-acT"/>
+                            <constraint firstItem="v8V-QJ-s2Z" firstAttribute="height" secondItem="Lsl-Um-bgI" secondAttribute="width" multiplier="0.5" id="hAH-hb-s8P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JcE-Fc-q9S"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertImageView" destination="xcR-Cn-zDy" id="SUo-ey-XFZ"/>
+                        <outlet property="alertLabel" destination="Ya7-Zl-Cuq" id="xRQ-pU-etN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O69-9d-MRr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2983" y="-713"/>
+        </scene>
         <!--Show Recipe View Controller-->
         <scene sceneID="pmx-1X-p6g">
             <objects>
@@ -245,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9T-Mj-SMa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975.1999999999998" y="96.7016491754123"/>
+            <point key="canvasLocation" x="3137" y="117"/>
         </scene>
         <!--Item-->
         <scene sceneID="mV2-7l-8Hk">
@@ -288,5 +346,6 @@
     </scenes>
     <resources>
         <image name="add" width="25" height="25"/>
+        <image name="brokenHeart" width="50" height="50"/>
     </resources>
 </document>

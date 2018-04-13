@@ -35,5 +35,9 @@ enum ListRecipe
     enum AddRecipe {
         struct Request {
         }
+        struct Response {
+        }
+        struct ViewModel {
+        }
     }
 }
