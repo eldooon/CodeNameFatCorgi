@@ -38,6 +38,10 @@ class ListRecipePresenter: ListRecipePresentationLogic {
     func presentAlert(response: ListRecipe.AddRecipe.Response) {
         var displayedAlert = ListRecipe.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "brokenHeart"), message: "Already Favorited")
         let viewModel = ListRecipe.AddRecipe.ViewModel(displayedAlert: displayedAlert)
-        viewController?.displayAddRecipe(viewModel: viewModel)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let alertView = storyboard.instantiateViewController(withIdentifier: "AlertView") as! AlertViewController
+        print("Set Message ", displayedAlert.message)
+        alertView.displayedAlert = displayedAlert
+        viewController?.displayAddRecipe(viewModel: viewModel, alertView: alertView)
     }
 }

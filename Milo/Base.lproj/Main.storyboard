@@ -211,8 +211,8 @@
                         <viewLayoutGuide key="safeArea" id="JcE-Fc-q9S"/>
                     </view>
                     <connections>
-                        <outlet property="alertImageView" destination="xcR-Cn-zDy" id="SUo-ey-XFZ"/>
-                        <outlet property="alertLabel" destination="Ya7-Zl-Cuq" id="xRQ-pU-etN"/>
+                        <outlet property="alertImageView" destination="xcR-Cn-zDy" id="cBZ-mI-hPT"/>
+                        <outlet property="alertLabel" destination="Ya7-Zl-Cuq" id="u7G-VQ-zvP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O69-9d-MRr" userLabel="First Responder" sceneMemberID="firstResponder"/>

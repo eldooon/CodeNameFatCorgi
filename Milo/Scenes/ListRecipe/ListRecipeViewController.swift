@@ -14,7 +14,7 @@ import UIKit
 
 protocol ListRecipeDisplayLogic: class {
     func displayFetchRecipes(viewModel: ListRecipe.FetchRecipes.ViewModel)
-    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel)
+    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel, alertView: AlertViewController)
 }
 
 class ListRecipeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ListRecipeDisplayLogic {
@@ -94,10 +94,8 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
         collectionView?.reloadData()
     }
     
-    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel) {
+    func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel, alertView: AlertViewController) {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let alertView = storyboard.instantiateViewController(withIdentifier: "AlertView")
         alertView.modalTransitionStyle = .crossDissolve
         present(alertView, animated: true, completion: nil)
     }

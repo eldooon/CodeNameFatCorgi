@@ -10,8 +10,10 @@ import UIKit
 
 class AlertViewController: UIViewController {
 
+
     @IBOutlet weak var alertImageView: UIImageView!
     @IBOutlet weak var alertLabel: UILabel!
+    var displayedAlert: ListRecipe.AddRecipe.ViewModel.DisplayedAlert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,11 @@ class AlertViewController: UIViewController {
         // Do any additional setup after loading the view.
         Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(dismissAlert), userInfo: nil, repeats: false)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let displayedAlert = displayedAlert {
+            setImageandLabel(displayedAlert: displayedAlert)
+        }
     }
     
     @objc func dismissAlert() {
@@ -34,6 +37,10 @@ class AlertViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func setImageandLabel (displayedAlert: ListRecipe.AddRecipe.ViewModel.DisplayedAlert) {
+        alertLabel.text = displayedAlert.message
+        alertImageView.image = displayedAlert.image
+    }
 
     /*
     // MARK: - Navigation
