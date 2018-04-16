@@ -43,22 +43,19 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
     func addRecipe(indexPath: Int, request: ListRecipe.AddRecipe.Request) {
         
         guard let recipe = recipes?[indexPath] else {return}
+        let response: ListRecipe.AddRecipe.Response
         
         if checkIfAdded(recipetoAdd: recipe) == false {
             MyRecipeCoreDataStore.shared.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
-                print("Clicked to attempt to add recipe")
+            
             }
+            response = ListRecipe.AddRecipe.Response(isAdded: false)
         } else {
             print("Already favorited!")
-            let response = ListRecipe.AddRecipe.Response(isAdded: false)
-            self.presenter?.presentAlert(response: response)
-            
+            response = ListRecipe.AddRecipe.Response(isAdded: true)
         }
-//        recipeAddWorker.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
-//            //
-//            print("Clicked to attempt to add recipe")
-//        }
-        
+
+        self.presenter?.presentAlert(response: response)
     }
     
     func checkIfAdded(recipetoAdd: Recipe) -> Bool{
