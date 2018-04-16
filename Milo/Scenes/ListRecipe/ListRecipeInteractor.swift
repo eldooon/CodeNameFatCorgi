@@ -50,7 +50,7 @@ class ListRecipeInteractor: ListRecipeBusinessLogic, ListRecipeDataStore {
             }
         } else {
             print("Already favorited!")
-            let response = ListRecipe.AddRecipe.Response()
+            let response = ListRecipe.AddRecipe.Response(isAdded: false)
             self.presenter?.presentAlert(response: response)
             
         }

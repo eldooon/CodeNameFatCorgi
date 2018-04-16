@@ -96,6 +96,10 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     
     func displayAddRecipe(viewModel: ListRecipe.AddRecipe.ViewModel) {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let alertView = storyboard.instantiateViewController(withIdentifier: "AlertView")
+        alertView.modalTransitionStyle = .crossDissolve
+        present(alertView, animated: true, completion: nil)
     }
     
     

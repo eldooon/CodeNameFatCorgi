@@ -36,8 +36,14 @@ enum ListRecipe
         struct Request {
         }
         struct Response {
+            var isAdded: Bool
         }
         struct ViewModel {
+            struct DisplayedAlert {
+                var image: UIImage
+                var message: String
+            }
+            var displayedAlert: DisplayedAlert
         }
     }
 }

@@ -36,7 +36,8 @@ class ListRecipePresenter: ListRecipePresentationLogic {
     }
     
     func presentAlert(response: ListRecipe.AddRecipe.Response) {
-        let viewModel = ListRecipe.AddRecipe.ViewModel()
+        var displayedAlert = ListRecipe.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "brokenHeart"), message: "Already Favorited")
+        let viewModel = ListRecipe.AddRecipe.ViewModel(displayedAlert: displayedAlert)
         viewController?.displayAddRecipe(viewModel: viewModel)
     }
 }

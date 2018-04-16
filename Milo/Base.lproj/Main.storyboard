@@ -58,7 +58,6 @@
                                             <state key="normal" image="add"/>
                                             <connections>
                                                 <action selector="addRecipeButtonTapped:" destination="nI4-Qh-3Ar" eventType="touchUpInside" id="SGX-lv-DeY"/>
-                                                <segue destination="tfa-1J-fuG" kind="presentation" modalTransitionStyle="crossDissolve" id="bPy-fj-Wkj"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -166,13 +165,13 @@
         <!--Alert View Controller-->
         <scene sceneID="Yr6-Qg-ByK">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="tfa-1J-fuG" customClass="AlertViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertView" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tfa-1J-fuG" customClass="AlertViewController" customModule="Milo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lsl-Um-bgI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8V-QJ-s2Z">
-                                <rect key="frame" x="65" y="225.5" width="244" height="187.5"/>
+                                <rect key="frame" x="65" y="250" width="244" height="187.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brokenHeart" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-Cn-zDy">
                                         <rect key="frame" x="61.5" y="10" width="121.5" height="122"/>
