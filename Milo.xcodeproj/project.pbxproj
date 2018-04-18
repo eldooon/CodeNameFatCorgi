@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AC72ACCB09DF3B20C328FEB /* Pods_Milo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0427967BB08C8260F507925 /* Pods_Milo.framework */; };
 		BE313E47207291CA008B99E8 /* ListRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE313E46207291CA008B99E8 /* ListRecipeCell.swift */; };
 		BE313E4F2072A472008B99E8 /* ShowRecipePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE313E492072A472008B99E8 /* ShowRecipePresenter.swift */; };
 		BE313E502072A472008B99E8 /* ShowRecipeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE313E4A2072A472008B99E8 /* ShowRecipeWorker.swift */; };
@@ -42,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A70303C6D2F9A7F7C281DDD /* Pods-Milo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Milo/Pods-Milo.debug.xcconfig"; sourceTree = "<group>"; };
+		93977144885481165F21002F /* Pods-Milo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Milo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Milo/Pods-Milo.release.xcconfig"; sourceTree = "<group>"; };
 		BE313E46207291CA008B99E8 /* ListRecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeCell.swift; sourceTree = "<group>"; };
 		BE313E492072A472008B99E8 /* ShowRecipePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecipePresenter.swift; sourceTree = "<group>"; };
 		BE313E4A2072A472008B99E8 /* ShowRecipeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRecipeWorker.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		BEB942AF206BFCCD00F1FEE1 /* ListRecipeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipeInteractor.swift; sourceTree = "<group>"; };
 		BEDA0A0220811635000ACDD2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		BEE1B980207D179F00A99BB8 /* MyRecipeCoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeCoreDataStore.swift; sourceTree = "<group>"; };
+		E0427967BB08C8260F507925 /* Pods_Milo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Milo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +87,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC72ACCB09DF3B20C328FEB /* Pods_Milo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064493F462211EC35DD30A88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A70303C6D2F9A7F7C281DDD /* Pods-Milo.debug.xcconfig */,
+				93977144885481165F21002F /* Pods-Milo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE313E45207291B3008B99E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +177,8 @@
 			children = (
 				BEB94293206BFA2700F1FEE1 /* Milo */,
 				BEB94292206BFA2700F1FEE1 /* Products */,
+				064493F462211EC35DD30A88 /* Pods */,
+				E0EFE3F0C80E2BA03C93587C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +241,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E0EFE3F0C80E2BA03C93587C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0427967BB08C8260F507925 /* Pods_Milo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BEB942A3206BFA2700F1FEE1 /* Build configuration list for PBXNativeTarget "Milo" */;
 			buildPhases = (
+				EE81A491A5D1EDCF277AD74F /* [CP] Check Pods Manifest.lock */,
 				BEB9428D206BFA2700F1FEE1 /* Sources */,
 				BEB9428E206BFA2700F1FEE1 /* Frameworks */,
 				BEB9428F206BFA2700F1FEE1 /* Resources */,
+				8ABC4B3FD5E0188FA71C9A64 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,6 +317,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8ABC4B3FD5E0188FA71C9A64 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Milo/Pods-Milo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Milo/Pods-Milo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE81A491A5D1EDCF277AD74F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Milo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BEB9428D206BFA2700F1FEE1 /* Sources */ = {
@@ -464,6 +529,7 @@
 		};
 		BEB942A4206BFA2700F1FEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A70303C6D2F9A7F7C281DDD /* Pods-Milo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +545,7 @@
 		};
 		BEB942A5206BFA2700F1FEE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93977144885481165F21002F /* Pods-Milo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
