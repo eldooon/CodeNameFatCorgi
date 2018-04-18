@@ -145,11 +145,11 @@
             </objects>
             <point key="canvasLocation" x="2223" y="790"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="FKF-AC-NT7">
             <objects>
                 <navigationController id="L74-cH-yTi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vQ2-nq-DGM"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="starUnselected" selectedImage="starSelected" id="vQ2-nq-DGM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oCs-8K-5Dg">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -304,11 +304,11 @@
             </objects>
             <point key="canvasLocation" x="3137" y="117"/>
         </scene>
-        <!--Item-->
+        <!--Recipes-->
         <scene sceneID="mV2-7l-8Hk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d8R-BR-3Fm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="V9W-ZT-jS5"/>
+                    <tabBarItem key="tabBarItem" title="Recipes" image="recipeUnselected" selectedImage="recipeSelected" id="V9W-ZT-jS5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uVr-ls-U5h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -346,5 +346,9 @@
     <resources>
         <image name="add" width="25" height="25"/>
         <image name="brokenHeart" width="50" height="50"/>
+        <image name="recipeSelected" width="25" height="25"/>
+        <image name="recipeUnselected" width="25" height="25"/>
+        <image name="starSelected" width="25" height="25"/>
+        <image name="starUnselected" width="25" height="25"/>
     </resources>
 </document>
