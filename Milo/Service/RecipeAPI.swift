@@ -10,10 +10,11 @@ import Alamofire
 import UIKit
 
 class RecipeAPI: RecipesStoreProtocol {
+    
 
     func fetchRecipesfromAPI() {
-        let url =
-            Alamofire.request("localhost:3002/recipes").responseJSON { (response) in
+        let url = "https://cryptic-springs-90053.herokuapp.com/recipes"
+        Alamofire.request(url).responseJSON { (response) in
                 print(response)
         }
     }

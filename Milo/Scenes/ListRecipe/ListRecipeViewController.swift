@@ -76,6 +76,8 @@ class ListRecipeViewController: UICollectionViewController, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchRecipes()
+        let fetchAPI = RecipeAPI()
+        fetchAPI.fetchRecipesfromAPI()
     }
     
     // MARK: Fetch Recipes
