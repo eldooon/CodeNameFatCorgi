@@ -13,20 +13,30 @@ class RecipeAPI: RecipesStoreProtocol {
     
     func fetchRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
         var recipes: [Recipe] = []
-        let url = "https://cryptic-springs-90053.herokuapp.com/recipes"
-        Alamofire.request(url).responseJSON { (response) in
-            
-            if let result = response.result.value {
-                let recipesAPI = result as! [Dictionary<String, Any>]
-                
-                for item in recipesAPI {
-                    let recipe = Recipe(image: #imageLiteral(resourceName: "chicken"), name: item["name"] as! String, description: item["description"] as! String)
-                    print(recipe)
-                    recipes.append(recipe)
-                }
-                completionHandler(recipes, nil)
+        
+        let queue = DispatchQueue(label: "com.milo.response-queue", qos: .utility, attributes: [.concurrent])
+        
+        Alamofire.request("https://cryptic-springs-90053.herokuapp.com/recipes", parameters: nil)
+            .response(
+                queue: queue,
+                responseSerializer: DataRequest.jsonResponseSerializer(),
+                completionHandler: { response in
+                    
+                    if let result = response.result.value {
+                        let recipesAPI = result as! [Dictionary<String, Any>]
+                        
+                        for item in recipesAPI {
+                            let recipe = Recipe(image: #imageLiteral(resourceName: "chicken"), name: item["name"] as! String, description: item["description"] as! String)
+                            print(recipe)
+                            recipes.append(recipe)
+                        }
+                        
+                        DispatchQueue.main.async {
+                            completionHandler(recipes, nil)
+                        }
+                    }
             }
-        }
+        )
     }
     
     func addToMyRecipes(recipeToAdd: Recipe, completionHandler: @escaping (Recipe?, RecipesStoreError?) -> Void) {
