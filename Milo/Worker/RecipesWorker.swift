@@ -25,8 +25,10 @@ class RecipesWorkers: RecipesStoreProtocol {
     
     func fetchRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
         //Temporary Test Data
-        let testData = TestRecipe.testRecipeData
-        completionHandler(testData, nil)
+        let listRecipes = RecipeAPI()
+        listRecipes.fetchRecipes { (recipes, error) in
+            completionHandler(recipes, nil)
+        }
     }
     
     func fetchMyRecipes(completionHandler: @escaping ([Recipe], RecipesStoreError?) -> Void) {
