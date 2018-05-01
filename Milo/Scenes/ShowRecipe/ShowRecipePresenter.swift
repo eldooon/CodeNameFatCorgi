@@ -14,20 +14,34 @@ import UIKit
 
 protocol ShowRecipePresentationLogic
 {
-  func presentRecipe(response: ShowRecipe.GetRecipe.Response)
+    func presentRecipe(response: ShowRecipe.GetRecipe.Response)
+    func presentAlert(response: ShowRecipe.AddRecipe.Response)
 }
 
 class ShowRecipePresenter: ShowRecipePresentationLogic
 {
-  weak var viewController: ShowRecipeDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentRecipe(response: ShowRecipe.GetRecipe.Response)
-  {
-    let recipe = response.recipe
-    let displayedRecipe = ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe(image: recipe.image, name: recipe.name, description: recipe.description)
-    let viewModel = ShowRecipe.GetRecipe.ViewModel(displayedRecipe: displayedRecipe)
-    viewController?.displayRecipe(viewModel: viewModel)
-  }
+    weak var viewController: ShowRecipeDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentRecipe(response: ShowRecipe.GetRecipe.Response) {
+        let recipe = response.recipe
+        let displayedRecipe = ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe(image: recipe.image, name: recipe.name, description: recipe.description)
+        let viewModel = ShowRecipe.GetRecipe.ViewModel(displayedRecipe: displayedRecipe)
+        viewController?.displayRecipe(viewModel: viewModel)
+    }
+    
+    func presentAlert(response: ShowRecipe.AddRecipe.Response) {
+        
+        var displayedAlert: DisplayAlert.AddRecipe.ViewModel.DisplayedAlert
+        if response.isAdded == true {
+            displayedAlert = DisplayAlert.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "brokenHeart"), message: "Already Favorited")
+            
+        } else {
+            displayedAlert = DisplayAlert.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "heart"), message: "Favorited")
+        }
+        let viewModel = DisplayAlert.AddRecipe.ViewModel(displayedAlert: displayedAlert)
+        print("Set Message ", displayedAlert.message)
+        viewController?.displayAddRecipe(viewModel: viewModel)
+    }
 }

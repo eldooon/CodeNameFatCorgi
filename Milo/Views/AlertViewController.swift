@@ -13,7 +13,7 @@ class AlertViewController: UIViewController {
 
     @IBOutlet weak var alertImageView: UIImageView!
     @IBOutlet weak var alertLabel: UILabel!
-    var displayedAlert: ListRecipe.AddRecipe.ViewModel.DisplayedAlert?
+    var displayedAlert: DisplayAlert.AddRecipe.ViewModel.DisplayedAlert?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class AlertViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setImageandLabel (displayedAlert: ListRecipe.AddRecipe.ViewModel.DisplayedAlert) {
+    func setImageandLabel (displayedAlert: DisplayAlert.AddRecipe.ViewModel.DisplayedAlert) {
         alertLabel.text = displayedAlert.message
         alertImageView.image = displayedAlert.image
     }

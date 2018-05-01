@@ -14,12 +14,14 @@ import UIKit
 
 protocol ShowRecipeDisplayLogic: class {
     func displayRecipe(viewModel: ShowRecipe.GetRecipe.ViewModel)
+    func displayAddRecipe(viewModel: DisplayAlert.AddRecipe.ViewModel)
 }
 
 class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic {
     
     var interactor: ShowRecipeBusinessLogic?
     var router: (NSObjectProtocol & ShowRecipeRoutingLogic & ShowRecipeDataPassing)?
+    var displayedRecipes: ShowRecipe.GetRecipe.ViewModel.DisplayedRecipe?
     
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var recipeNameLabel: UILabel!
@@ -83,5 +85,13 @@ class ShowRecipeViewController: UIViewController, ShowRecipeDisplayLogic {
         recipeImageView.image = displayedsRecipe.image
         recipeNameLabel.text = displayedsRecipe.name
         recipeDescriptionTextView.text = displayedsRecipe.description
+    }
+    
+    func displayAddRecipe(viewModel: DisplayAlert.AddRecipe.ViewModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let alertView = storyboard.instantiateViewController(withIdentifier: "AlertView") as! AlertViewController
+        alertView.modalTransitionStyle = .crossDissolve
+        alertView.displayedAlert = viewModel.displayedAlert
+        present(alertView, animated: true, completion: nil)
     }
 }

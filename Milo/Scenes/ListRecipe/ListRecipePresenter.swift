@@ -37,14 +37,14 @@ class ListRecipePresenter: ListRecipePresentationLogic {
     
     func presentAlert(response: ListRecipe.AddRecipe.Response) {
         
-        var displayedAlert: ListRecipe.AddRecipe.ViewModel.DisplayedAlert
+        var displayedAlert: DisplayAlert.AddRecipe.ViewModel.DisplayedAlert
         if response.isAdded == true {
-            displayedAlert = ListRecipe.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "brokenHeart"), message: "Already Favorited")
+            displayedAlert = DisplayAlert.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "brokenHeart"), message: "Already Favorited")
            
         } else {
-            displayedAlert = ListRecipe.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "heart"), message: "Favorited")
+            displayedAlert = DisplayAlert.AddRecipe.ViewModel.DisplayedAlert(image: #imageLiteral(resourceName: "heart"), message: "Favorited")
         }
-        let viewModel = ListRecipe.AddRecipe.ViewModel(displayedAlert: displayedAlert)
+        let viewModel = DisplayAlert.AddRecipe.ViewModel(displayedAlert: displayedAlert)
         print("Set Message ", displayedAlert.message)
         viewController?.displayAddRecipe(viewModel: viewModel)
     }

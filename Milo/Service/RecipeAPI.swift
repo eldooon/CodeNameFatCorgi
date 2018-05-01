@@ -23,7 +23,7 @@ class RecipeAPI: RecipesStoreProtocol {
                 completionHandler: { response in
                     
                     if let result = response.result.value {
-                        let recipesAPI = result as! [Dictionary<String, Any>]
+                        guard let recipesAPI = result as? [Dictionary<String, Any>] else {return}
                         
                         for item in recipesAPI {
                             

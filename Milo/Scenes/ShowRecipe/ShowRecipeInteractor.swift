@@ -36,8 +36,35 @@ class ShowRecipeInteractor: ShowRecipeBusinessLogic, ShowRecipeDataStore {
     }
     
     func addRecipe(request: ShowRecipe.AddRecipe.Request) {
-        MyRecipeMemStore.addRecipe(recipe: recipe)
-        print(MyRecipeMemStore.recipes)
+        
+        let response: ShowRecipe.AddRecipe.Response
+        
+        if checkIfAdded(recipetoAdd: recipe) == false {
+            MyRecipeCoreDataStore.shared.addToMyRecipes(recipeToAdd: recipe) { (recipe, error) in
+                
+            }
+            response = ShowRecipe.AddRecipe.Response(isAdded: false)
+        } else {
+            print("Already favorited!")
+            response = ShowRecipe.AddRecipe.Response(isAdded: true)
+        }
+        
+        self.presenter?.presentAlert(response: response)
+    }
+    
+    func checkIfAdded(recipetoAdd: Recipe) -> Bool{
+        
+        var isAdded = false
+        
+        MyRecipeCoreDataStore.shared.fetchRecipes { (recipes, error) in
+            for recipe in recipes {
+                if recipe.name == recipetoAdd.name {
+                    isAdded = true
+                }
+            }
+        }
+        
+        return isAdded
     }
     
 }
