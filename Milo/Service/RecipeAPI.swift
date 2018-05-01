@@ -26,7 +26,10 @@ class RecipeAPI: RecipesStoreProtocol {
                         let recipesAPI = result as! [Dictionary<String, Any>]
                         
                         for item in recipesAPI {
-                            let recipe = Recipe(image: #imageLiteral(resourceName: "chicken"), name: item["name"] as! String, description: item["description"] as! String)
+                            
+                            guard let name = item["name"] as? String else {return}
+                            guard let description = item["description"] as? String else {return}
+                            let recipe = Recipe(image: #imageLiteral(resourceName: "chicken"), name: name, description: description)
                             print(recipe)
                             recipes.append(recipe)
                         }
